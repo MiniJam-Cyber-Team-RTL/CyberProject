@@ -9,7 +9,9 @@ var wait_for_anim_end = false
 var is_jumping = false
 var is_crouching = false # ras le cul, j'aimerais apprendre les anim tree mais tant pis
 var is_running = false # si quelqu'un vois ce code je n'ai plus aucune crédibilitée dans l'univers
+var is_punching = false
 var direction
+
 func _physics_process(delta: float) -> void:
 	direction = Input.get_axis("ui_left", "ui_right")
 	is_facing_right = false if direction == -1 else true
@@ -21,22 +23,29 @@ func _physics_process(delta: float) -> void:
 			play_anim("fall", !is_facing_right)
 	else:
 		# The Movement
-		if direction and !is_crouching: # Crouch as the priority over movement
+		if direction and (!is_crouching and !is_punching): # Crouch as the priority over movement
 			velocity.x = direction * SPEED
 			play_anim("run", !is_facing_right)
 			is_running = true
 		else:
 			# If the player does nothing, idle
-			if !is_crouching:
+			if !is_crouching and !is_punching:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 				play_anim("idle", !is_facing_right)
+				is_punching = false
+				is_crouching = false
 			
 		# Handle jump.
 		if Input.is_action_just_pressed("ui_accept"):
 			velocity.y = JUMP_VELOCITY
 			play_anim("jump", !is_facing_right)
 			is_jumping = true
+			is_punching = false
 		# Handle the punch
+		if Input.is_action_just_pressed("ui_select"):
+			play_anim("punch", !is_facing_right)
+			is_punching = true
+			velocity.x = 0
 		# Handle crouching and unchrouching
 		if Input.is_action_just_pressed("ui_down"):
 			is_running = false
@@ -48,7 +57,10 @@ func _physics_process(delta: float) -> void:
 			is_crouching = false
 			
 		is_jumping = velocity.y < 0
-	print($AnimatedSprite2D.is_playing())
+		if $AnimatedSprite2D.animation == "punch" and $AnimatedSprite2D.frame_progress == 1:
+			print("OIA")
+			is_punching = false
+	print($AnimatedSprite2D.animation)
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
