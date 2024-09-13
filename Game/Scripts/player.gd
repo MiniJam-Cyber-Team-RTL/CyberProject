@@ -49,16 +49,21 @@ func _physics_process(delta: float) -> void:
 		# Handle crouching and unchrouching
 		if Input.is_action_just_pressed("ui_down"):
 			is_running = false
-			play_anim("crouch", !is_facing_right)
 			is_crouching = true
+			$CollisionShape2D.disabled = true
+			$CollisionShape2D_Crouch.disabled = false
+			play_anim("crouch", !is_facing_right)
 			velocity.x = 0
 		elif Input.is_action_just_released("ui_down"):
-			play_anim("crouch", !is_facing_right, false)
 			is_crouching = false
+			$CollisionShape2D.disabled = false
+			$CollisionShape2D_Crouch.disabled = true
+			play_anim("crouch", !is_facing_right, false)
 			
 		is_jumping = velocity.y < 0
+		
+		# C'est DéGEULASSSE mais bon... JE NE SAIT PAS FAIRE DE ANIM TREE
 		if $AnimatedSprite2D.animation == "punch" and $AnimatedSprite2D.frame_progress == 1:
-			print("OIA")
 			is_punching = false
 	print($AnimatedSprite2D.animation)
 	
