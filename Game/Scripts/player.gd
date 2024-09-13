@@ -38,26 +38,26 @@ func _physics_process(delta: float) -> void:
 		# Handle jump.
 		if Input.is_action_just_pressed("ui_accept"):
 			velocity.y = JUMP_VELOCITY
+			change_collision(true, false)
 			play_anim("jump", !is_facing_right)
 			is_jumping = true
 			is_punching = false
 		# Handle the punch
 		if Input.is_action_just_pressed("ui_select"):
-			play_anim("punch", !is_facing_right)
-			is_punching = true
 			velocity.x = 0
+			is_punching = true
+			change_collision(true, false)
+			play_anim("punch", !is_facing_right)
 		# Handle crouching and unchrouching
 		if Input.is_action_just_pressed("ui_down"):
 			is_running = false
 			is_crouching = true
-			$CollisionShape2D.disabled = true
-			$CollisionShape2D_Crouch.disabled = false
+			change_collision(false, true)
 			play_anim("crouch", !is_facing_right)
 			velocity.x = 0
 		elif Input.is_action_just_released("ui_down"):
 			is_crouching = false
-			$CollisionShape2D.disabled = false
-			$CollisionShape2D_Crouch.disabled = true
+			change_collision(true, false)
 			play_anim("crouch", !is_facing_right, false)
 			
 		is_jumping = velocity.y < 0
@@ -70,6 +70,11 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	move_and_slide()
+	
+	
+func change_collision(collision1 : bool, collision2: bool):
+	$CollisionShape2D.disabled = !collision1
+	$CollisionShape2D_Crouch.disabled = !collision2
 
 func play_anim(anim_name : String, face_direction : bool, play_forward: bool = true):
 	$AnimatedSprite2D.animation = anim_name
