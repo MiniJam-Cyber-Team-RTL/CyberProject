@@ -16,6 +16,13 @@ func _physics_process(delta: float) -> void:
 	direction = Input.get_axis("ui_left", "ui_right")
 	is_facing_right = false if direction == -1 else true
 	
+	if is_facing_right:
+		$Area2D/CollisionShape2D_Right.disabled = false
+		$Area2D/CollisionShape2D_Left.disabled = true
+	else:
+		$Area2D/CollisionShape2D_Right.disabled = true
+		$Area2D/CollisionShape2D_Left.disabled = false
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -62,13 +69,11 @@ func _physics_process(delta: float) -> void:
 			
 		is_jumping = velocity.y < 0
 		
-		# C'est DéGEULASSSE mais bon... JE NE SAIT PAS FAIRE DE ANIM TREE
+		# C'est DéGEULASSSE mais bon... JE NE SAIT PAS FAIRE DE ANIM TREE~AU SECOURS AIDEZ MOIIIIIIIIIII
 		if $AnimatedSprite2D.animation == "punch" and $AnimatedSprite2D.frame_progress == 1:
 			is_punching = false
 	print($AnimatedSprite2D.animation)
 	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	move_and_slide()
 	
 	
