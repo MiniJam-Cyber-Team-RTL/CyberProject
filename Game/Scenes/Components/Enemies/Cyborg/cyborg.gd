@@ -24,6 +24,7 @@ func _ready() -> void:
 	$Timer.wait_time = ATTACK_COOLDOWN
 
 func _physics_process(delta: float) -> void:
+	$Label.text = str(health)
 	if is_alive and !is_hurt:
 		if player_entered:
 			animation.flip_h = player.position.x < global_position.x
