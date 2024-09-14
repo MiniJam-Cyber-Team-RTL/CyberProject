@@ -10,12 +10,17 @@ var is_jumping = false
 var is_crouching = false # ras le cul, j'aimerais apprendre les anim tree mais tant pis
 var is_running = false # si quelqu'un vois ce code je n'ai plus aucune crédibilitée dans l'univers
 var is_punching = false
+
+var player_life = 5;
+var player_damage = 1;
+
 var direction
 
 func _physics_process(delta: float) -> void:
 	direction = Input.get_axis("ui_left", "ui_right")
 	is_facing_right = false if direction == -1 else true
 	
+	# I think right and left are inverted, somehow
 	if is_facing_right:
 		$Area2D/CollisionShape2D_Right.disabled = false
 		$Area2D/CollisionShape2D_Left.disabled = true
@@ -69,10 +74,10 @@ func _physics_process(delta: float) -> void:
 			
 		is_jumping = velocity.y < 0
 		
-		# C'est DéGEULASSSE mais bon... JE NE SAIT PAS FAIRE DE ANIM TREE~AU SECOURS AIDEZ MOIIIIIIIIIII
-		if $AnimatedSprite2D.animation == "punch" and $AnimatedSprite2D.frame_progress == 1:
+		# C'est DéGEULASSSE mais bon... JE NE SAIT PAS FAIRE DE ANIM TREE AU SECOURS AIDEZ MOIIIIIIIIIII
+		if $AnimatedSprite2D_Main.animation == "punch" and $AnimatedSprite2D_Main.frame_progress == 1:
 			is_punching = false
-	print($AnimatedSprite2D.animation)
+	print($AnimatedSprite2D_Main.animation)
 	
 	move_and_slide()
 	
@@ -82,9 +87,10 @@ func change_collision(collision1 : bool, collision2: bool):
 	$CollisionShape2D_Crouch.disabled = !collision2
 
 func play_anim(anim_name : String, face_direction : bool, play_forward: bool = true):
-	$AnimatedSprite2D.animation = anim_name
-	$AnimatedSprite2D.flip_h = face_direction
+	$AnimatedSprite2D_Main.animation = anim_name
+	$AnimatedSprite2D_Main.flip_h = face_direction
 	if play_forward:
-		$AnimatedSprite2D.play()
+		$AnimatedSprite2D_Main.play()
 	else:
-		$AnimatedSprite2D.play_backwards()
+		$AnimatedSprite2D_Main.play_backwards()
+		

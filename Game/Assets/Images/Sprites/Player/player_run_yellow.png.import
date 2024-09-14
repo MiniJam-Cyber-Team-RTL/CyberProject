@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byfewpsrf5wqv"
-path="res://.godot/imported/player_crouch.png-c763ae12ee5c9663f9805de47caef117.ctex"
+uid="uid://gwrw7wcy4ick"
+path="res://.godot/imported/player_run_yellow.png-72bb50d5c53d01a6aba4e3239dc1b9ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Sprites/Player/player_crouch.png"
-dest_files=["res://.godot/imported/player_crouch.png-c763ae12ee5c9663f9805de47caef117.ctex"]
+source_file="res://Assets/Images/Sprites/Player/player_run_yellow.png"
+dest_files=["res://.godot/imported/player_run_yellow.png-72bb50d5c53d01a6aba4e3239dc1b9ab.ctex"]
 
 [params]
 
