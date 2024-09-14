@@ -429,8 +429,8 @@ region = Rect2(32, 0, 32, 64)
 atlas = ExtResource("12_6rhlw")
 region = Rect2(64, 0, 32, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a3x66"]
-atlas = ExtResource("8_ydxhb")
+[sub_resource type="AtlasTexture" id="AtlasTexture_yf7fe"]
+atlas = ExtResource("14_8p4ut")
 region = Rect2(64, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vgj2h"]
@@ -527,7 +527,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a3x66")
+"texture": SubResource("AtlasTexture_yf7fe")
 }],
 "loop": true,
 "name": &"fall_yellow",
@@ -619,11 +619,11 @@ collision_layer = 2
 script = ExtResource("1_iyu3m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -17)
+position = Vector2(1.5, 13.5)
 shape = SubResource("RectangleShape2D_iv86t")
 
 [node name="CollisionShape2D_Crouch" type="CollisionShape2D" parent="."]
-position = Vector2(0, -8.25)
+position = Vector2(1.7, 22)
 shape = SubResource("RectangleShape2D_6qfyg")
 disabled = true
 debug_color = Color(0.940373, 8.66354e-06, 0.615292, 0.42)
@@ -631,24 +631,27 @@ debug_color = Color(0.940373, 8.66354e-06, 0.615292, 0.42)
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D_Left" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-15, -17.25)
+position = Vector2(-9.25, 13.5)
 shape = SubResource("CircleShape2D_3htyv")
 
 [node name="CollisionShape2D_Right" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(10.25, -17)
+position = Vector2(12, 13.25)
 shape = SubResource("CircleShape2D_whi07")
 
 [node name="AnimatedSprite2D_Main" type="AnimatedSprite2D" parent="."]
+position = Vector2(7.5, -1.5)
 sprite_frames = SubResource("SpriteFrames_w5dhm")
-animation = &"fall"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="AnimatedSprite2D_Power" type="AnimatedSprite2D" parent="."]
+position = Vector2(7.5, -1.5)
 sprite_frames = SubResource("SpriteFrames_l21ge")
-animation = &"fall_red"
+animation = &"idle_red"
 autoplay = "idle_red"
 
 [node name="AnimatedSprite2D_Speed" type="AnimatedSprite2D" parent="."]
+position = Vector2(7.5, -1.5)
 sprite_frames = SubResource("SpriteFrames_vwth1")
-animation = &"fall_yellow"
+animation = &"idle_yellow"
 autoplay = "idle_yellow"
