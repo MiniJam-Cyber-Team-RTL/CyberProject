@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const JUMP_VELOCITY = -300.0
-const POWER_UP_TIMER = 3
+const POWER_UP_TIMER = 30
 
 var is_facing_right = true
 var wait_for_anim_end = false
@@ -83,7 +83,7 @@ func _physics_process(delta: float) -> void:
 		# C'est DéGEULASSSE mais bon... JE NE SAIT PAS FAIRE DE ANIM TREE AU SECOURS AIDEZ MOIIIIIIIIIII
 		if $AnimatedSprite2D_Main.animation == "punch" and $AnimatedSprite2D_Main.frame_progress == 1:
 			is_punching = false
-	print($AnimatedSprite2D_Main.animation)
+	print(player_life, "et en dmg ", player_damage)
 	
 	move_and_slide()
 	

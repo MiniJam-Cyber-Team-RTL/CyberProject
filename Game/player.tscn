@@ -844,7 +844,7 @@ shape = SubResource("CircleShape2D_3htyv")
 position = Vector2(12, 13.25)
 shape = SubResource("CircleShape2D_whi07")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D_Main" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(1.75, 13.625)
 shape = SubResource("RectangleShape2D_pbovi")
 

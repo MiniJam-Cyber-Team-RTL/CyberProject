@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c2fotaqa35vpc"]
+[gd_scene load_steps=8 format=3 uid="uid://c2fotaqa35vpc"]
 
 [ext_resource type="PackedScene" uid="uid://h0rlffgiuech" path="res://player.tscn" id="1_fee41"]
 [ext_resource type="Texture2D" uid="uid://k2y52pe1yj7r" path="res://Assets/Images/Levels/tile.png" id="2_51djm"]
 [ext_resource type="PackedScene" uid="uid://bxdbka2xf3u13" path="res://power_up_power.tscn" id="3_pp6c0"]
+[ext_resource type="PackedScene" uid="uid://c7k7746rrvsnc" path="res://power_up_speed.tscn" id="4_jooyo"]
+[ext_resource type="PackedScene" uid="uid://fyrquysaf0da" path="res://power_up_health.tscn" id="5_injar"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6md8o"]
 texture = ExtResource("2_51djm")
@@ -27,5 +29,11 @@ tile_set = SubResource("TileSet_3vbtb")
 format = 2
 layer_0/tile_data = PackedInt32Array(983043, 0, 0, 983045, 0, 0, 983047, 0, 0, 983049, 0, 0, 983051, 0, 0, 983053, 0, 0, 983055, 0, 0, 983057, 0, 0, 983059, 0, 0, 983061, 0, 0, 983063, 0, 0, 983065, 0, 0, 2490396, 0, 0, 2490398, 0, 0, 2490400, 0, 0, 2490402, 0, 0, 2490404, 0, 0, 2490406, 0, 0, 2490408, 0, 0)
 
-[node name="Power-up" parent="." instance=ExtResource("3_pp6c0")]
-position = Vector2(313, 215)
+[node name="Power-up_power" parent="." instance=ExtResource("3_pp6c0")]
+position = Vector2(312, 217)
+
+[node name="Power-up_speed" parent="." instance=ExtResource("4_jooyo")]
+position = Vector2(567, 150)
+
+[node name="power_up_health" parent="." instance=ExtResource("5_injar")]
+position = Vector2(94, 197)

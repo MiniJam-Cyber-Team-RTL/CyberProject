@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	print("OUAB")
+	print("OUABsdsqddssqd")
 	var player = get_node("/root/Main/Player")
-	player.pickup_power_up(1)
+	player.pickup_power_up(2)
 	queue_free()
