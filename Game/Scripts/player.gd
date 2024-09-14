@@ -19,7 +19,8 @@ var direction
 func _ready():
 	$AnimatedSprite2D_Power.visible = false
 	$AnimatedSprite2D_Speed.visible = false
-	pickup_power_up(2)
+	$Area2D/CollisionShape2D_Right.disabled = true
+	$Area2D/CollisionShape2D_Left.disabled = true
 	
 func _physics_process(delta: float) -> void:
 	direction = Input.get_axis("ui_left", "ui_right")
@@ -99,7 +100,6 @@ func play_anim(anim_name : String, face_direction : bool = true, play_forward: b
 	$AnimatedSprite2D_Power.flip_h = face_direction
 	$AnimatedSprite2D_Speed.flip_h = face_direction
 	$AnimatedSprite2D_Main.centered = true
-
 	
 	if play_forward:
 		$AnimatedSprite2D_Main.play()
@@ -110,6 +110,15 @@ func play_anim(anim_name : String, face_direction : bool = true, play_forward: b
 		$AnimatedSprite2D_Power.play_backwards()
 		$AnimatedSprite2D_Speed.play_backwards()
 		
+	if anim_name == "punch":
+		if face_direction:
+			$Area2D/CollisionShape2D_Left.disabled = false
+		else: 
+			$Area2D/CollisionShape2D_Right.disabled = false
+	else:
+		$Area2D/CollisionShape2D_Left.disabled = true
+		$Area2D/CollisionShape2D_Right.disabled = true
+
 func take_damage(damage: int):
 	player_life -= damage
 	if player_life < 1:

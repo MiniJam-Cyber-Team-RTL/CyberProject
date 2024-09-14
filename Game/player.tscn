@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=3 uid="uid://h0rlffgiuech"]
+[gd_scene load_steps=124 format=3 uid="uid://h0rlffgiuech"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_iyu3m"]
 [ext_resource type="Texture2D" uid="uid://byfewpsrf5wqv" path="res://Assets/Images/Sprites/Player/player_crouch.png" id="2_v4ltn"]
@@ -34,6 +34,9 @@ radius = 17.0018
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_whi07"]
 radius = 16.7668
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pbovi"]
+size = Vector2(18, 33.75)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aqddp"]
 atlas = ExtResource("2_v4ltn")
@@ -819,7 +822,6 @@ animations = [{
 z_index = 5
 position = Vector2(200, 200)
 scale = Vector2(4, 4)
-collision_layer = 2
 script = ExtResource("1_iyu3m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -841,6 +843,10 @@ shape = SubResource("CircleShape2D_3htyv")
 [node name="CollisionShape2D_Right" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(12, 13.25)
 shape = SubResource("CircleShape2D_whi07")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.75, 13.625)
+shape = SubResource("RectangleShape2D_pbovi")
 
 [node name="AnimatedSprite2D_Main" type="AnimatedSprite2D" parent="."]
 position = Vector2(7.5, -1.5)
