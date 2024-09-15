@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bxdbka2xf3u13"]
 
-[ext_resource type="Script" path="res://Scripts/power_up_power.gd" id="1_brbd7"]
+[ext_resource type="Script" path="res://Scenes/Components/PowersUp/PowerUpPower/power_up_power.gd" id="1_brbd7"]
 [ext_resource type="Texture2D" uid="uid://u7srw2j0iy3m" path="res://Assets/Images/Sprites/Pickups/power_pickup.png" id="2_3oft6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bv43t"]

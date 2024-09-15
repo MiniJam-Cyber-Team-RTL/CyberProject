@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://fyrquysaf0da"]
 
-[ext_resource type="Script" path="res://Scripts/power_up_health.gd" id="1_e1oxu"]
+[ext_resource type="Script" path="res://Scenes/Components/PowersUp/PowerUpHealth/power_up_health.gd" id="1_e1oxu"]
 [ext_resource type="Texture2D" uid="uid://cj1aaq37ic8ta" path="res://Assets/Images/Sprites/Pickups/health_pickup.png" id="2_5wpyj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_psbtr"]

@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://c2fotaqa35vpc"]
 
-[ext_resource type="PackedScene" uid="uid://h0rlffgiuech" path="res://player.tscn" id="1_fee41"]
+[ext_resource type="PackedScene" uid="uid://h0rlffgiuech" path="res://Scenes/Components/Player/player.tscn" id="1_fee41"]
 [ext_resource type="Texture2D" uid="uid://k2y52pe1yj7r" path="res://Assets/Images/Levels/tile.png" id="2_51djm"]
-[ext_resource type="PackedScene" uid="uid://bxdbka2xf3u13" path="res://power_up_power.tscn" id="3_pp6c0"]
-[ext_resource type="PackedScene" uid="uid://c7k7746rrvsnc" path="res://power_up_speed.tscn" id="4_jooyo"]
-[ext_resource type="PackedScene" uid="uid://fyrquysaf0da" path="res://power_up_health.tscn" id="5_injar"]
+[ext_resource type="PackedScene" uid="uid://bxdbka2xf3u13" path="res://Scenes/Components/PowersUp/PowerUpPower/power_up_power.tscn" id="3_pp6c0"]
+[ext_resource type="PackedScene" uid="uid://c7k7746rrvsnc" path="res://Scenes/Components/PowersUp/PowerUpSpeed/power_up_speed.tscn" id="4_jooyo"]
+[ext_resource type="PackedScene" uid="uid://fyrquysaf0da" path="res://Scenes/Components/PowersUp/PowerUpHealth/power_up_health.tscn" id="5_injar"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6md8o"]
 texture = ExtResource("2_51djm")
@@ -23,6 +23,7 @@ sources/0 = SubResource("TileSetAtlasSource_6md8o")
 
 [node name="Player" parent="." instance=ExtResource("1_fee41")]
 position = Vector2(155, -12)
+script = null
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_3vbtb")
@@ -31,9 +32,12 @@ layer_0/tile_data = PackedInt32Array(983043, 0, 0, 983045, 0, 0, 983047, 0, 0, 9
 
 [node name="Power-up_power" parent="." instance=ExtResource("3_pp6c0")]
 position = Vector2(312, 217)
+script = null
 
 [node name="Power-up_speed" parent="." instance=ExtResource("4_jooyo")]
 position = Vector2(567, 150)
+script = null
 
 [node name="power_up_health" parent="." instance=ExtResource("5_injar")]
 position = Vector2(94, 197)
+script = null
