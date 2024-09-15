@@ -18,6 +18,7 @@ var direction
 func _ready():
 	$AnimatedSprite2D_Power.visible = false
 	$AnimatedSprite2D_Speed.visible = false
+	$"MusicPlayer".play()
 	
 func _physics_process(delta: float) -> void:
 	direction = Input.get_axis("ui_left", "ui_right")
@@ -83,7 +84,10 @@ func _physics_process(delta: float) -> void:
 		if $AnimatedSprite2D_Main.animation == "punch" and $AnimatedSprite2D_Main.frame_progress == 1:
 			is_punching = false
 	print($AnimatedSprite2D_Main.animation)
-	
+		
+	if !$"MusicPlayer".is_playing():
+		$"MusicPlayer".play()
+		
 	move_and_slide()
 	
 	

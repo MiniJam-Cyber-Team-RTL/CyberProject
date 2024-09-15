@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=3 uid="uid://h0rlffgiuech"]
+[gd_scene load_steps=126 format=3 uid="uid://h0rlffgiuech"]
 
 [ext_resource type="Script" path="res://Scenes/Components/Player/player.gd" id="1_iyu3m"]
 [ext_resource type="Texture2D" uid="uid://byfewpsrf5wqv" path="res://Assets/Images/Sprites/Player/player_crouch.png" id="2_v4ltn"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://ys62umwfr6ub" path="res://Assets/Images/Sprites/Player/player_hurt_yellow.png" id="19_861yh"]
 [ext_resource type="AudioStream" uid="uid://b808k1tju43nj" path="res://Assets/Sounds/Player/jump.wav" id="23_xrxcg"]
 [ext_resource type="AudioStream" uid="uid://dr6nswg0ovo5x" path="res://Assets/Sounds/Player/player_punch.wav" id="24_ow2wi"]
+[ext_resource type="AudioStream" uid="uid://b846p5dmldf2b" path="res://Assets/Sounds/Music/music.mp3" id="25_ul47g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iv86t"]
 size = Vector2(18, 34)
@@ -879,13 +880,16 @@ volume_db = -20.0
 
 [node name="PunchSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("24_ow2wi")
-volume_db = -20.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(250, 0)
 zoom = Vector2(1.8, 1.8)
 position_smoothing_enabled = true
 position_smoothing_speed = 15.0
+
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_ul47g")
+volume_db = -20.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
