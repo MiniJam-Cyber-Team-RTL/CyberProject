@@ -11,9 +11,12 @@ config_version=5
 [application]
 
 config/name="CyberProject"
-run/main_scene="res://Scenes/main.tscn"
+run/main_scene="res://Scenes/Components/UI/menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.704024, 0.2328, 0.317516, 1)
+boot_splash/image="res://Assets/Images/UI/icon.png"
+boot_splash/use_filter=false
+config/icon="res://Assets/Images/UI/icon.png"
 
 [dotnet]
 
