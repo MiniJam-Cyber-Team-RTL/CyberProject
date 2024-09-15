@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b3v1xlujnuow5"]
 
-[ext_resource type="Script" path="res://Scenes/Components/UI/in_game_ui.gd" id="1_3ltx1"]
+[ext_resource type="Script" path="res://Scenes/Components/UI/IngameUI/in_game_ui.gd" id="1_3ltx1"]
 [ext_resource type="Texture2D" uid="uid://dpwgl858bb5q2" path="res://Assets/Images/Icons/heart.png" id="2_7rpoq"]
 [ext_resource type="Texture2D" uid="uid://dsm33xjq3d24l" path="res://Assets/Images/Icons/fist.png" id="3_cq34o"]
 [ext_resource type="Texture2D" uid="uid://b75es86qvnqus" path="res://Assets/Images/Icons/thunder.png" id="4_t8o4f"]
