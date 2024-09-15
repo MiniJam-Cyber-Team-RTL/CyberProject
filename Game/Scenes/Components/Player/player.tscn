@@ -219,6 +219,9 @@ animations = [{
 }, {
 "duration": 3.0,
 "texture": SubResource("AtlasTexture_mcc6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fbwt")
 }],
 "loop": false,
 "name": &"hurt",
@@ -722,7 +725,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_bfl5p")
 }],
 "loop": false,
-"name": &"death",
+"name": &"death_yellow",
 "speed": 3.0
 }, {
 "frames": [{
@@ -855,10 +858,8 @@ shape = SubResource("RectangleShape2D_pbovi")
 [node name="AnimatedSprite2D_Main" type="AnimatedSprite2D" parent="."]
 position = Vector2(7.5, -1.5)
 sprite_frames = SubResource("SpriteFrames_w5dhm")
-animation = &"hurt"
+animation = &"idle"
 autoplay = "idle"
-frame = 1
-frame_progress = 1.0
 
 [node name="AnimatedSprite2D_Power" type="AnimatedSprite2D" parent="."]
 position = Vector2(7.5, -1.5)
@@ -871,10 +872,8 @@ frame_progress = 1.0
 [node name="AnimatedSprite2D_Speed" type="AnimatedSprite2D" parent="."]
 position = Vector2(7.5, -1.5)
 sprite_frames = SubResource("SpriteFrames_vwth1")
-animation = &"hurt_yellow"
+animation = &"death_yellow"
 autoplay = "idle_yellow"
-frame = 1
-frame_progress = 1.0
 
 [node name="Timer_Speed" type="Timer" parent="."]
 process_callback = 0
@@ -903,6 +902,9 @@ stream = ExtResource("26_n6l6t")
 
 [node name="Timer_Power" type="Timer" parent="."]
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="animation_finished" from="AnimatedSprite2D_Main" to="." method="_on_animated_sprite_2d_main_animation_finished"]
+[connection signal="frame_changed" from="AnimatedSprite2D_Main" to="." method="_on_animated_sprite_2d_main_frame_changed"]
 [connection signal="timeout" from="Timer_Speed" to="." method="_on_timer_speed_timeout"]
 [connection signal="timeout" from="Timer_Power" to="." method="_on_timer_power_timeout"]
