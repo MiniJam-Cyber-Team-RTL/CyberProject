@@ -79,6 +79,7 @@ Additional Credits to   : https://craftpix.net for most of the 2D assets
 			  Cybertruck by MoodMaze for the level music
 			  Stellar escape by Prigida for the menu music
 			  Yesterday (Jazz Elevator) by Monument_Music for the pause music
+			  Isn't She Lovely MIDI by Estouls MIDI Studio originally by Stevie Wonder for the end music
 			  https://www.asciiart.eu for the ASCII art
 			  Doomword idgames archive frontend for the Template of this readme
 			  The Sumerians for the invention of the beer, strongly used during this jam

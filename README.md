@@ -31,6 +31,10 @@ for
 the shitty programming  : Lemon-Squeezer from Outer-Space 
 			  on the minijam discord
 
+Léo's best score on
+Robot Run               : 287pts
+
+
 Misc. Authors Info      : We are a team of 3 french students in 
 			  game devloppment of the UQAC 
 			  (Universitée du Quebec a Chicoutimi) 
@@ -71,6 +75,7 @@ Credits                 : Léo Cheik-Boukal : - Level Designer
 					     - Ennemy and Puzzle Programmer
 					     - UI Programmer/Design
 					     - Ennemy Design (few tweaks to ennemy and a door)
+						 - 3 AM Volleyball play the first day
 			  Tom Douaud       : - Gameplay Programmer
 					     - Character Programmer (Sorry a big mess, it'll be better next time)
 					     - Character Annimation (the powerups)
@@ -82,6 +87,7 @@ Additional Credits to   : https://craftpix.net for most of the 2D assets
 			  Cybertruck by MoodMaze for the level music
 			  Stellar escape by Prigida for the menu music
 			  Yesterday (Jazz Elevator) by Monument_Music for the pause music
+			  Isn't She Lovely MIDI by Estouls MIDI Studio originally by Stevie Wonder for the end music
 			  https://www.asciiart.eu for the ASCII art
 			  Doomword idgames archive frontend for the Template of this readme
 			  The Sumerians for the invention of the beer, strongly used during this jam
