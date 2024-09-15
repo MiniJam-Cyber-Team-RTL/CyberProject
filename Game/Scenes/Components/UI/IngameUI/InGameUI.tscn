@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://b3v1xlujnuow5"]
+[gd_scene load_steps=6 format=3 uid="uid://b3v1xlujnuow5"]
 
-[ext_resource type="Script" path="res://Scenes/Components/UI/IngameUI/in_game_ui.gd" id="1_3ltx1"]
 [ext_resource type="Texture2D" uid="uid://dpwgl858bb5q2" path="res://Assets/Images/Icons/heart.png" id="2_7rpoq"]
 [ext_resource type="Texture2D" uid="uid://dsm33xjq3d24l" path="res://Assets/Images/Icons/fist.png" id="3_cq34o"]
 [ext_resource type="Texture2D" uid="uid://b75es86qvnqus" path="res://Assets/Images/Icons/thunder.png" id="4_t8o4f"]
@@ -13,10 +12,7 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[node name="InGameUi" type="CanvasLayer"]
-script = ExtResource("1_3ltx1")
-
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer"]
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
@@ -26,76 +22,76 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
-[node name="PlayerHealth" type="PanelContainer" parent="MarginContainer/HBoxContainer"]
+[node name="PlayerHealth" type="PanelContainer" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_okme4")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/PlayerHealth"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PlayerHealth"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/PlayerHealth/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/PlayerHealth/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("2_7rpoq")
 expand_mode = 2
 
-[node name="PlayerHealthLabel" type="Label" parent="MarginContainer/HBoxContainer/PlayerHealth/HBoxContainer"]
+[node name="PlayerHealthLabel" type="Label" parent="HBoxContainer/PlayerHealth/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 text = "000"
 
-[node name="PlayerPowerUps" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="PlayerPowerUps" type="HBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 10
 
-[node name="Damage" type="PanelContainer" parent="MarginContainer/HBoxContainer/PlayerPowerUps"]
+[node name="Damage" type="PanelContainer" parent="HBoxContainer/PlayerPowerUps"]
 visible = false
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/PlayerPowerUps/Damage"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PlayerPowerUps/Damage"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/PlayerPowerUps/Damage/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/PlayerPowerUps/Damage/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("3_cq34o")
 expand_mode = 2
 
-[node name="DamageLabel" type="Label" parent="MarginContainer/HBoxContainer/PlayerPowerUps/Damage/HBoxContainer"]
+[node name="DamageLabel" type="Label" parent="HBoxContainer/PlayerPowerUps/Damage/HBoxContainer"]
 layout_mode = 2
 text = "D"
 
-[node name="Speed" type="PanelContainer" parent="MarginContainer/HBoxContainer/PlayerPowerUps"]
+[node name="Speed" type="PanelContainer" parent="HBoxContainer/PlayerPowerUps"]
 visible = false
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/PlayerPowerUps/Speed"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PlayerPowerUps/Speed"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/PlayerPowerUps/Speed/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/PlayerPowerUps/Speed/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("4_t8o4f")
 expand_mode = 2
 
-[node name="SpeedLabel" type="Label" parent="MarginContainer/HBoxContainer/PlayerPowerUps/Speed/HBoxContainer"]
+[node name="SpeedLabel" type="Label" parent="HBoxContainer/PlayerPowerUps/Speed/HBoxContainer"]
 layout_mode = 2
 text = "S"
 
-[node name="Life" type="PanelContainer" parent="MarginContainer/HBoxContainer/PlayerPowerUps"]
+[node name="Life" type="PanelContainer" parent="HBoxContainer/PlayerPowerUps"]
 visible = false
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/PlayerPowerUps/Life"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/PlayerPowerUps/Life"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/PlayerPowerUps/Life/HBoxContainer"]
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/PlayerPowerUps/Life/HBoxContainer"]
 layout_mode = 2
 texture = ExtResource("5_qxavo")
 expand_mode = 2
 
-[node name="LifeLabel" type="Label" parent="MarginContainer/HBoxContainer/PlayerPowerUps/Life/HBoxContainer"]
+[node name="LifeLabel" type="Label" parent="HBoxContainer/PlayerPowerUps/Life/HBoxContainer"]
 layout_mode = 2
 text = "L"
