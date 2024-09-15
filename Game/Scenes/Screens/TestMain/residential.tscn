@@ -9,7 +9,7 @@
 [node name="Residential" type="ParallaxBackground"]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-position = Vector2(-280, -104)
+position = Vector2(-280, -304)
 motion_scale = Vector2(0, 0)
 motion_mirroring = Vector2(1602, 1000)
 
@@ -20,7 +20,7 @@ texture = ExtResource("1_be4xr")
 centered = false
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
-position = Vector2(-280, -104)
+position = Vector2(-280, -304)
 motion_scale = Vector2(0.2, 0.2)
 motion_mirroring = Vector2(1602, 1000)
 
@@ -31,7 +31,7 @@ texture = ExtResource("2_pq5dq")
 centered = false
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
-position = Vector2(-280, -104)
+position = Vector2(-280, -304)
 motion_scale = Vector2(0.4, 0.4)
 motion_mirroring = Vector2(1602, 1000)
 
@@ -42,7 +42,7 @@ texture = ExtResource("3_0gc25")
 centered = false
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
-position = Vector2(-280, -104)
+position = Vector2(-280, -304)
 motion_scale = Vector2(0.6, 0.6)
 motion_mirroring = Vector2(1602, 1000)
 
@@ -53,7 +53,7 @@ texture = ExtResource("4_5kvqw")
 centered = false
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="."]
-position = Vector2(-280, -104)
+position = Vector2(-280, -304)
 motion_scale = Vector2(0.8, 0.8)
 motion_mirroring = Vector2(1602, 1000)
 
