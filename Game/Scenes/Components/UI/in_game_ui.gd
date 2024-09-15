@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 func update_health(new_value : int):
-	$MarginContainer/HBoxContainer/PlayerHealth.text = new_value
+	$MarginContainer/HBoxContainer/PlayerHealth/HBoxContainer/PlayerHealthLabel.text = new_value
 	
 func show_power_up(type):
 	match type :

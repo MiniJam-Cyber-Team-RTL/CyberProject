@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3v1xlujnuow5"]
+[gd_scene load_steps=4 format=3 uid="uid://b3v1xlujnuow5"]
 
 [ext_resource type="Script" path="res://Scenes/Components/UI/in_game_ui.gd" id="1_3ltx1"]
+[ext_resource type="Texture2D" uid="uid://dpwgl858bb5q2" path="res://Assets/Images/Icons/heart.png" id="2_7rpoq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okme4"]
+bg_color = Color(0.6, 0.6, 0.882353, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="InGameUi" type="CanvasLayer"]
 script = ExtResource("1_3ltx1")
@@ -20,7 +28,19 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
 
-[node name="PlayerHealth" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="PlayerHealth" type="PanelContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_okme4")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/PlayerHealth"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/PlayerHealth/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_7rpoq")
+expand_mode = 2
+
+[node name="PlayerHealthLabel" type="Label" parent="MarginContainer/HBoxContainer/PlayerHealth/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
 text = "000"
