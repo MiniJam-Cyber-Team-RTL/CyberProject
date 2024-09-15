@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3v1xlujnuow5"]
+
+[ext_resource type="Script" path="res://Scenes/Components/UI/in_game_ui.gd" id="1_3ltx1"]
+
+[node name="InGameUi" type="CanvasLayer"]
+script = ExtResource("1_3ltx1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="PlayerHealth" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "000"
+
+[node name="PlayerPowerUps" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="Damage" type="Label" parent="MarginContainer/HBoxContainer/PlayerPowerUps"]
+visible = false
+layout_mode = 2
+text = "D"
+
+[node name="Speed" type="Label" parent="MarginContainer/HBoxContainer/PlayerPowerUps"]
+visible = false
+layout_mode = 2
+text = "S"
+
+[node name="Life" type="Label" parent="MarginContainer/HBoxContainer/PlayerPowerUps"]
+visible = false
+layout_mode = 2
+text = "L"
