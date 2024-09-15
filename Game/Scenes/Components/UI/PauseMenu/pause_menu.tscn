@@ -59,10 +59,12 @@ text = "QUIT GAME"
 [node name="PauseMusic" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_6ldad")
 volume_db = -20.0
+max_distance = 9e+06
 
 [node name="ConfirmButton" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_52qkl")
 volume_db = -20.0
+max_distance = 9e+06
 
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_2_pressed"]

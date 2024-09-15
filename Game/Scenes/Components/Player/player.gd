@@ -85,9 +85,7 @@ func _physics_process(delta: float) -> void:
 		# C'est DéGEULASSSE mais bon... JE NE SAIT PAS FAIRE DE ANIM TREE AU SECOURS AIDEZ MOIIIIIIIIIII
 		if $AnimatedSprite2D_Main.animation == "punch" and $AnimatedSprite2D_Main.frame_progress == 1:
 			is_punching = false
-			
-	print($AnimatedSprite2D_Main.animation)
-		
+					
 	if !$"MusicPlayer".is_playing():
 		$"MusicPlayer".play()
 			
