@@ -55,7 +55,6 @@ icon = ExtResource("4_tkt7j")
 
 [node name="music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_mn6hl")
-volume_db = -20.0
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit game" to="." method="_on_quit_game_pressed"]
