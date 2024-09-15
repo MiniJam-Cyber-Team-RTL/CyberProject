@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=3 uid="uid://drqkkm5d62dbl"]
+[gd_scene load_steps=94 format=3 uid="uid://drqkkm5d62dbl"]
 
 [ext_resource type="Texture2D" uid="uid://cr8nhgmewvmwd" path="res://Assets/Images/Environment/Levels/industrial-zone-tileset-pixel-art/PSD/Tiles.png" id="1_36rlo"]
 [ext_resource type="PackedScene" uid="uid://miuef0jthcb0" path="res://Scenes/Screens/TestMain/residential.tscn" id="1_fpcgy"]
@@ -84,7 +84,10 @@
 [ext_resource type="Texture2D" uid="uid://cl0d6v8u2exfs" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Symbols/19.png" id="84_knbga"]
 [ext_resource type="PackedScene" uid="uid://h0rlffgiuech" path="res://Scenes/Components/Player/player.tscn" id="85_hoh3x"]
 [ext_resource type="Texture2D" uid="uid://yftksnrn65x0" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Symbols/20.png" id="85_nk50l"]
+[ext_resource type="PackedScene" uid="uid://bxdbka2xf3u13" path="res://Scenes/Components/PowersUp/PowerUpPower/power_up_power.tscn" id="86_51f63"]
 [ext_resource type="Texture2D" uid="uid://dkalpc4rhnj5y" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Symbols/21.png" id="86_on4uc"]
+[ext_resource type="PackedScene" uid="uid://c7k7746rrvsnc" path="res://Scenes/Components/PowersUp/PowerUpSpeed/power_up_speed.tscn" id="87_wkfhc"]
+[ext_resource type="PackedScene" uid="uid://fyrquysaf0da" path="res://Scenes/Components/PowersUp/PowerUpHealth/power_up_health.tscn" id="88_8q0nr"]
 
 [sub_resource type="Environment" id="Environment_msalp"]
 background_mode = 3
@@ -1723,3 +1726,12 @@ position = Vector2(-35.5, 1.75)
 scale = Vector2(0.25, 0.25)
 zoom = Vector2(2, 2)
 limit_bottom = 1100
+
+[node name="Power-up_power" parent="." instance=ExtResource("86_51f63")]
+position = Vector2(-440, -35)
+
+[node name="Power-up_speed" parent="." instance=ExtResource("87_wkfhc")]
+position = Vector2(-168, -107)
+
+[node name="power_up_health" parent="." instance=ExtResource("88_8q0nr")]
+position = Vector2(-746, -31)

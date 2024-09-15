@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const JUMP_VELOCITY = -500.0
-const POWER_UP_TIMER = 30
+const POWER_UP_TIMER = 15
 
 var is_facing_right = true
 var wait_for_anim_end = false
@@ -9,6 +9,8 @@ var is_jumping = false
 var is_crouching = false # ras le cul, j'aimerais apprendre les anim tree mais tant pis
 var is_running = false # si quelqu'un vois ce code je n'ai plus aucune crédibilitée dans l'univers
 var is_punching = false
+
+
 
 var player_speed = 200.0
 var player_life = 5;
@@ -23,6 +25,8 @@ func _ready():
 	$Area2D/CollisionShape2D_Left.disabled = true
 	
 func _physics_process(delta: float) -> void:
+	var ui = get_node("/root/Main/CanvasLayer/MarginContainer")
+	ui.update_health(player_life)
 	direction = Input.get_axis("ui_left", "ui_right")
 	is_facing_right = false if direction == -1 else true
 	
@@ -88,7 +92,10 @@ func _physics_process(delta: float) -> void:
 					
 	if !$"MusicPlayer".is_playing():
 		$"MusicPlayer".play()
-			
+	
+	ui.update_damage($Timer_Power.time_left)
+	ui.update_speed($Timer_Speed.time_left)
+	
 	move_and_slide()
 	
 	
@@ -132,27 +139,27 @@ func take_damage(damage: int):
 		play_anim("hurt")
 		
 func pickup_power_up(type):
-	$Timer.wait_time = POWER_UP_TIMER
-	$Timer.one_shot = true
+	var ui = get_node("/root/Main/CanvasLayer/MarginContainer")
+	$Timer_Power.wait_time = POWER_UP_TIMER
+	$Timer_Speed.wait_time = POWER_UP_TIMER
+	$Timer_Power.one_shot = true
+	$Timer_Speed.one_shot = true
 	$PowerUpSound.play()
 	# Power power-up
 	if type == 1:
 		player_damage += 1
 		$AnimatedSprite2D_Power.visible = true
-		$Timer.start()
+		ui.show_power_up(type, POWER_UP_TIMER)
+		$Timer_Power.start()
 	elif type == 2:
 		player_speed = player_speed * 2
 		$AnimatedSprite2D_Speed.visible = true
-		$Timer.start()
+		ui.show_power_up(type, POWER_UP_TIMER)
+		$Timer_Speed.start()
 	else:
+		ui.show_power_up(type, POWER_UP_TIMER)
 		player_life += 1
 	
-func _on_timer_timeout() -> void:
-	$AnimatedSprite2D_Power.visible = false
-	$AnimatedSprite2D_Speed.visible = false
-	player_speed = 200.0
-	player_damage = 1
-
 #sacré singerie
 func player():
 	pass
@@ -163,3 +170,18 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		if Boxes != null:
 			var Box = Boxes[0]
 			Box.destroy()
+
+
+func _on_timer_speed_timeout() -> void:
+	var ui = get_node("/root/Main/CanvasLayer/MarginContainer")
+	ui.hide_power_up(1)
+	$AnimatedSprite2D_Speed.visible = false
+	player_speed = 200.0
+
+
+
+func _on_timer_power_timeout() -> void:
+	var ui = get_node("/root/Main/CanvasLayer/MarginContainer")
+	ui.hide_power_up(2)
+	$AnimatedSprite2D_Power.visible = false
+	player_damage = 1

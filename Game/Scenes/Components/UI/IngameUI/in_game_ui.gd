@@ -10,6 +10,7 @@ func hide_power_up(type):
 		1: $HBoxContainer/PlayerPowerUps/Damage.hide()
 		2: $HBoxContainer/PlayerPowerUps/Speed.hide()
 
+
 func update_health(value : int):
 	$HBoxContainer/PlayerHealth/HBoxContainer/PlayerHealthLabel.text = str(value)
 

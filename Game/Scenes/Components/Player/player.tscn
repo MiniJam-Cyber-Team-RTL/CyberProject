@@ -876,7 +876,7 @@ autoplay = "idle_yellow"
 frame = 1
 frame_progress = 1.0
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer_Speed" type="Timer" parent="."]
 process_callback = 0
 wait_time = 30.0
 one_shot = true
@@ -901,5 +901,8 @@ volume_db = -20.0
 [node name="PowerUpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("26_n6l6t")
 
+[node name="Timer_Power" type="Timer" parent="."]
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer_Speed" to="." method="_on_timer_speed_timeout"]
+[connection signal="timeout" from="Timer_Power" to="." method="_on_timer_power_timeout"]
