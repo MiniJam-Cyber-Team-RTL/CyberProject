@@ -138,3 +138,10 @@ func _on_timer_timeout() -> void:
 	$AnimatedSprite2D_Speed.visible = false
 	player_speed = 100.0
 	player_damage = 1
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if is_punching:
+		var Boxes = get_tree().get_nodes_in_group("Box")
+		if Boxes != null:
+			var Box = Boxes[0]
+			Box.destroy()

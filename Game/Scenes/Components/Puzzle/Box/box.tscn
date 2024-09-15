@@ -1,0 +1,59 @@
+[gd_scene load_steps=10 format=3 uid="uid://7vg4uhqptwaw"]
+
+[ext_resource type="Script" path="res://Scenes/Components/Puzzle/Box/box.gd" id="1_l37md"]
+[ext_resource type="Texture2D" uid="uid://bdsmbvfxae5nh" path="res://Assets/Images/Sprites/Puzzles/Box/1.png" id="1_tqcre"]
+[ext_resource type="Texture2D" uid="uid://nx44e7kukh15" path="res://Assets/Images/Sprites/Puzzles/Box/2.png" id="2_3j76h"]
+[ext_resource type="Texture2D" uid="uid://bq1fuhx3vcpy8" path="res://Assets/Images/Sprites/Puzzles/Box/3.png" id="3_s6ti7"]
+[ext_resource type="Texture2D" uid="uid://d4br2ao6we3bn" path="res://Assets/Images/Sprites/Puzzles/Box/4.png" id="4_krc57"]
+[ext_resource type="Texture2D" uid="uid://1aeg3tnqy2r5" path="res://Assets/Images/Sprites/Puzzles/Box/5.png" id="5_1cf81"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dxrbh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tqcre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3j76h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_s6ti7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_krc57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1cf81")
+}],
+"loop": false,
+"name": &"death",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wsou"]
+size = Vector2(28, 22)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f41pw"]
+radius = 41.0488
+
+[node name="Box" type="Node2D"]
+script = ExtResource("1_l37md")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D"]
+sprite_frames = SubResource("SpriteFrames_dxrbh")
+animation = &"death"
+frame = 4
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_0wsou")
+
+[node name="InteractZone" type="Area2D" parent="RigidBody2D"]
+
+[node name="InteractZoneollision" type="CollisionShape2D" parent="RigidBody2D/InteractZone"]
+shape = SubResource("CircleShape2D_f41pw")
+
+[connection signal="area_entered" from="RigidBody2D/InteractZone" to="." method="_on_interact_zone_area_entered"]
