@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const JUMP_VELOCITY = -300.0
-const POWER_UP_TIMER = 3
+const JUMP_VELOCITY = -500.0
+const POWER_UP_TIMER = 30
 
 var is_facing_right = true
 var wait_for_anim_end = false
@@ -10,7 +10,7 @@ var is_crouching = false # ras le cul, j'aimerais apprendre les anim tree mais t
 var is_running = false # si quelqu'un vois ce code je n'ai plus aucune crédibilitée dans l'univers
 var is_punching = false
 
-var player_speed = 100.0
+var player_speed = 200.0
 var player_life = 5;
 var player_damage = 1;
 
@@ -18,7 +18,6 @@ var direction
 func _ready():
 	$AnimatedSprite2D_Power.visible = false
 	$AnimatedSprite2D_Speed.visible = false
-	pickup_power_up(2)
 	
 func _physics_process(delta: float) -> void:
 	direction = Input.get_axis("ui_left", "ui_right")
@@ -58,12 +57,14 @@ func _physics_process(delta: float) -> void:
 			play_anim("jump", !is_facing_right)
 			is_jumping = true
 			is_punching = false
+			$JumpSound.play()
 		# Handle the punch
 		if Input.is_action_just_pressed("ui_select"):
 			velocity.x = 0
 			is_punching = true
 			change_collision(true, false)
 			play_anim("punch", !is_facing_right)
+			$PunchSound.play()
 		# Handle crouching and unchrouching
 		if Input.is_action_just_pressed("ui_down"):
 			is_running = false
