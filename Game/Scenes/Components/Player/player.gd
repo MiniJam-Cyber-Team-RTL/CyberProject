@@ -19,6 +19,8 @@ func _ready():
 	$AnimatedSprite2D_Power.visible = false
 	$AnimatedSprite2D_Speed.visible = false
 	$"MusicPlayer".play()
+	$Area2D/CollisionShape2D_Right.disabled = true
+	$Area2D/CollisionShape2D_Left.disabled = true
 	
 func _physics_process(delta: float) -> void:
 	direction = Input.get_axis("ui_left", "ui_right")
@@ -83,11 +85,16 @@ func _physics_process(delta: float) -> void:
 		# C'est DéGEULASSSE mais bon... JE NE SAIT PAS FAIRE DE ANIM TREE AU SECOURS AIDEZ MOIIIIIIIIIII
 		if $AnimatedSprite2D_Main.animation == "punch" and $AnimatedSprite2D_Main.frame_progress == 1:
 			is_punching = false
+<<<<<<< HEAD
 	print($AnimatedSprite2D_Main.animation)
 		
 	if !$"MusicPlayer".is_playing():
 		$"MusicPlayer".play()
 		
+=======
+	print(player_life, "et en dmg ", player_damage)
+	
+>>>>>>> pickups
 	move_and_slide()
 	
 	
@@ -103,7 +110,6 @@ func play_anim(anim_name : String, face_direction : bool = true, play_forward: b
 	$AnimatedSprite2D_Power.flip_h = face_direction
 	$AnimatedSprite2D_Speed.flip_h = face_direction
 	$AnimatedSprite2D_Main.centered = true
-
 	
 	if play_forward:
 		$AnimatedSprite2D_Main.play()
@@ -114,6 +120,15 @@ func play_anim(anim_name : String, face_direction : bool = true, play_forward: b
 		$AnimatedSprite2D_Power.play_backwards()
 		$AnimatedSprite2D_Speed.play_backwards()
 		
+	if anim_name == "punch":
+		if face_direction:
+			$Area2D/CollisionShape2D_Left.disabled = false
+		else: 
+			$Area2D/CollisionShape2D_Right.disabled = false
+	else:
+		$Area2D/CollisionShape2D_Left.disabled = true
+		$Area2D/CollisionShape2D_Right.disabled = true
+
 func take_damage(damage: int):
 	player_life -= damage
 	if player_life < 1:
