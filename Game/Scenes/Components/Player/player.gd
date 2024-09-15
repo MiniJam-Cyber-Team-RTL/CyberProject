@@ -85,16 +85,12 @@ func _physics_process(delta: float) -> void:
 		# C'est DéGEULASSSE mais bon... JE NE SAIT PAS FAIRE DE ANIM TREE AU SECOURS AIDEZ MOIIIIIIIIIII
 		if $AnimatedSprite2D_Main.animation == "punch" and $AnimatedSprite2D_Main.frame_progress == 1:
 			is_punching = false
-<<<<<<< HEAD
+			
 	print($AnimatedSprite2D_Main.animation)
 		
 	if !$"MusicPlayer".is_playing():
 		$"MusicPlayer".play()
-		
-=======
-	print(player_life, "et en dmg ", player_damage)
-	
->>>>>>> pickups
+			
 	move_and_slide()
 	
 	
@@ -140,6 +136,7 @@ func take_damage(damage: int):
 func pickup_power_up(type):
 	$Timer.wait_time = POWER_UP_TIMER
 	$Timer.one_shot = true
+	$PowerUpSound.play()
 	# Power power-up
 	if type == 1:
 		player_damage += 1
@@ -155,7 +152,7 @@ func pickup_power_up(type):
 func _on_timer_timeout() -> void:
 	$AnimatedSprite2D_Power.visible = false
 	$AnimatedSprite2D_Speed.visible = false
-	player_speed = 100.0
+	player_speed = 200.0
 	player_damage = 1
 
 #sacré singerie

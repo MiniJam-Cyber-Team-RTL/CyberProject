@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dwsi4iis5dioc"]
+[gd_scene load_steps=34 format=3 uid="uid://dwsi4iis5dioc"]
 
 [ext_resource type="Texture2D" uid="uid://cr8nhgmewvmwd" path="res://Assets/Images/Environment/Levels/industrial-zone-tileset-pixel-art/PSD/Tiles.png" id="1_36rlo"]
 [ext_resource type="PackedScene" uid="uid://miuef0jthcb0" path="res://Scenes/Screens/TestMain/residential.tscn" id="1_fpcgy"]
@@ -23,7 +23,10 @@
 [ext_resource type="Texture2D" uid="uid://cfs8uohilm1sd" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Pointers/3.png" id="22_s5baj"]
 [ext_resource type="Texture2D" uid="uid://od7b065gi0t6" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Pointers/6.png" id="23_ntupd"]
 [ext_resource type="Texture2D" uid="uid://coexvkdy7xxa1" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Pointers/5.png" id="24_lnd2a"]
+[ext_resource type="PackedScene" uid="uid://fyrquysaf0da" path="res://Scenes/Components/PowersUp/PowerUpHealth/power_up_health.tscn" id="25_gnlpm"]
 [ext_resource type="Texture2D" uid="uid://bcihkt2t32b6" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Pointers/7.png" id="25_lquyi"]
+[ext_resource type="PackedScene" uid="uid://bxdbka2xf3u13" path="res://Scenes/Components/PowersUp/PowerUpPower/power_up_power.tscn" id="26_ukj4t"]
+[ext_resource type="PackedScene" uid="uid://c7k7746rrvsnc" path="res://Scenes/Components/PowersUp/PowerUpSpeed/power_up_speed.tscn" id="26_w64jj"]
 
 [sub_resource type="Environment" id="Environment_msalp"]
 background_mode = 3
@@ -815,3 +818,12 @@ texture = ExtResource("23_ntupd")
 [node name="7" type="Sprite2D" parent="Objects/pointers"]
 position = Vector2(6843, 194)
 texture = ExtResource("25_lquyi")
+
+[node name="power_up_health" parent="." instance=ExtResource("25_gnlpm")]
+position = Vector2(337, -145)
+
+[node name="Power-up_power" parent="." instance=ExtResource("26_ukj4t")]
+position = Vector2(404, 48)
+
+[node name="power-up_speed" parent="." instance=ExtResource("26_w64jj")]
+position = Vector2(461, 48)
