@@ -22,6 +22,10 @@ config/icon="res://Assets/Images/Icons/icon.png"
 
 project/assembly_name="CyberProject"
 
+[global_group]
+
+enemie=""
+
 [input]
 
 ui_select={
