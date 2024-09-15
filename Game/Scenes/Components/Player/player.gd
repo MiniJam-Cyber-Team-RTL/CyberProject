@@ -141,3 +141,10 @@ func _on_timer_timeout() -> void:
 #sacré singerie
 func player():
 	pass
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if is_punching:
+		var Boxes = get_tree().get_nodes_in_group("Box")
+		if Boxes != null:
+			var Box = Boxes[0]
+			Box.destroy()
