@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://drqkkm5d62dbl"]
+[gd_scene load_steps=32 format=3 uid="uid://drqkkm5d62dbl"]
 
 [ext_resource type="Texture2D" uid="uid://cr8nhgmewvmwd" path="res://Assets/Images/Environment/Levels/industrial-zone-tileset-pixel-art/PSD/Tiles.png" id="1_36rlo"]
 [ext_resource type="PackedScene" uid="uid://miuef0jthcb0" path="res://Scenes/Screens/TestMain/residential.tscn" id="1_fpcgy"]
@@ -7,7 +7,24 @@
 [ext_resource type="PackedScene" uid="uid://cafopjuouyu2y" path="res://Scenes/Screens/TestMain/lamp_post.tscn" id="7_swwrx"]
 [ext_resource type="Texture2D" uid="uid://dawqwidnx5wdw" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/5 TileSet/Tiles_transparent.png" id="8_vus35"]
 [ext_resource type="Texture2D" uid="uid://d0mqfi77drhjg" path="res://Assets/Images/Environment/Levels/green-zone-tileset-pixel-art/5 TileSet/Tiles_block_transparent.png" id="9_0pina"]
+[ext_resource type="Texture2D" uid="uid://bn8wo6tx0s3og" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Boxes/4.png" id="9_t62oi"]
+[ext_resource type="Texture2D" uid="uid://dh8ju5ui80t5a" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Boxes/1.png" id="10_8506i"]
 [ext_resource type="PackedScene" uid="uid://bi2w3rsfe80j" path="res://Scenes/Screens/TestMain/player.tscn" id="10_oih8d"]
+[ext_resource type="Texture2D" uid="uid://cqkuu3o36sins" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Boxes/2.png" id="11_hjsof"]
+[ext_resource type="Texture2D" uid="uid://bl8lvghei0w52" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Boxes/5.png" id="12_tahg1"]
+[ext_resource type="Texture2D" uid="uid://cel4orvt3ofnj" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Boxes/3.png" id="13_m0yme"]
+[ext_resource type="Texture2D" uid="uid://cgvp6xh81onbg" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Bench.png" id="14_bdbrh"]
+[ext_resource type="Texture2D" uid="uid://cc5fduqxul7sy" path="res://Assets/Images/Environment/Levels/green-zone-tileset-pixel-art/3 Objects/Other/Garbage_Can2.png" id="15_ieykd"]
+[ext_resource type="Texture2D" uid="uid://covmj4lr0kxou" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Fireplugs/1.png" id="16_n0y5n"]
+[ext_resource type="Texture2D" uid="uid://0j2auokduxc4" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Fireplugs/2.png" id="17_qb7io"]
+[ext_resource type="Texture2D" uid="uid://hebh8d51ntb2" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Fireplugs/3.png" id="18_pruqp"]
+[ext_resource type="Texture2D" uid="uid://ble8fhjddo1fy" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Fireplugs/4.png" id="19_bm84f"]
+[ext_resource type="Texture2D" uid="uid://b77fhkyxlynt7" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Pointers/4.png" id="20_6g7x7"]
+[ext_resource type="Texture2D" uid="uid://b6be5nwoo2guo" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Pointers/1.png" id="21_2neji"]
+[ext_resource type="Texture2D" uid="uid://cfs8uohilm1sd" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Pointers/3.png" id="22_s5baj"]
+[ext_resource type="Texture2D" uid="uid://od7b065gi0t6" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Pointers/6.png" id="23_ntupd"]
+[ext_resource type="Texture2D" uid="uid://coexvkdy7xxa1" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Pointers/5.png" id="24_lnd2a"]
+[ext_resource type="Texture2D" uid="uid://bcihkt2t32b6" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Pointers/7.png" id="25_lquyi"]
 
 [sub_resource type="Environment" id="Environment_msalp"]
 background_mode = 3
@@ -553,70 +570,259 @@ color = Color(0.157575, 0.695304, 0.34242, 1)
 energy = 0.2
 blend_mode = 1
 
-[node name="LampsPosts" type="Node2D" parent="."]
+[node name="Objects" type="Node2D" parent="."]
 
-[node name="LampPost" parent="LampsPosts" instance=ExtResource("7_swwrx")]
+[node name="LampsPosts" type="Node2D" parent="Objects"]
+
+[node name="LampPost" parent="Objects/LampsPosts" instance=ExtResource("7_swwrx")]
 position = Vector2(-928, -63)
 
-[node name="LampPost2" parent="LampsPosts" instance=ExtResource("7_swwrx")]
+[node name="LampPost2" parent="Objects/LampsPosts" instance=ExtResource("7_swwrx")]
 position = Vector2(-480, -64)
 
-[node name="LampPost3" parent="LampsPosts" instance=ExtResource("7_swwrx")]
-position = Vector2(77, -1)
+[node name="LampPost3" parent="Objects/LampsPosts" instance=ExtResource("7_swwrx")]
+position = Vector2(77, 1)
 
-[node name="LampPost4" parent="LampsPosts" instance=ExtResource("7_swwrx")]
-position = Vector2(565, -1)
+[node name="LampPost4" parent="Objects/LampsPosts" instance=ExtResource("7_swwrx")]
+position = Vector2(565, 1)
 
-[node name="LampPost5" parent="LampsPosts" instance=ExtResource("7_swwrx")]
+[node name="LampPost5" parent="Objects/LampsPosts" instance=ExtResource("7_swwrx")]
 position = Vector2(1180, 0)
 
-[node name="LampPost6" parent="LampsPosts" instance=ExtResource("7_swwrx")]
+[node name="LampPost6" parent="Objects/LampsPosts" instance=ExtResource("7_swwrx")]
 position = Vector2(1663, 97)
 
-[node name="LampPost7" parent="LampsPosts" instance=ExtResource("7_swwrx")]
+[node name="LampPost7" parent="Objects/LampsPosts" instance=ExtResource("7_swwrx")]
 position = Vector2(1935, 97)
 
-[node name="LampPost8" parent="LampsPosts" instance=ExtResource("7_swwrx")]
+[node name="LampPost8" parent="Objects/LampsPosts" instance=ExtResource("7_swwrx")]
 position = Vector2(2400, 97)
 
-[node name="LampPost10" parent="LampsPosts" instance=ExtResource("7_swwrx")]
+[node name="LampPost10" parent="Objects/LampsPosts" instance=ExtResource("7_swwrx")]
 position = Vector2(3185, 1)
 
-[node name="LampPost11" parent="LampsPosts" instance=ExtResource("7_swwrx")]
+[node name="LampPost11" parent="Objects/LampsPosts" instance=ExtResource("7_swwrx")]
 position = Vector2(3510, 1)
 
-[node name="LampPost12" parent="LampsPosts" instance=ExtResource("7_swwrx")]
+[node name="LampPost12" parent="Objects/LampsPosts" instance=ExtResource("7_swwrx")]
 position = Vector2(3824, -95)
 
-[node name="LampPost13" parent="LampsPosts" instance=ExtResource("7_swwrx")]
+[node name="LampPost13" parent="Objects/LampsPosts" instance=ExtResource("7_swwrx")]
 position = Vector2(4114, -95)
 
-[node name="LampPost14" parent="LampsPosts" instance=ExtResource("7_swwrx")]
+[node name="LampPost14" parent="Objects/LampsPosts" instance=ExtResource("7_swwrx")]
 position = Vector2(4407, -95)
 
-[node name="LampPost15" parent="LampsPosts" instance=ExtResource("7_swwrx")]
+[node name="LampPost15" parent="Objects/LampsPosts" instance=ExtResource("7_swwrx")]
 position = Vector2(4697, -95)
 
-[node name="LampPost16" parent="LampsPosts" instance=ExtResource("7_swwrx")]
+[node name="LampPost16" parent="Objects/LampsPosts" instance=ExtResource("7_swwrx")]
 position = Vector2(5056, -95)
 
-[node name="LampPost17" parent="LampsPosts" instance=ExtResource("7_swwrx")]
+[node name="LampPost17" parent="Objects/LampsPosts" instance=ExtResource("7_swwrx")]
 position = Vector2(5346, -95)
 
-[node name="LampPost9" parent="LampsPosts" instance=ExtResource("7_swwrx")]
+[node name="LampPost9" parent="Objects/LampsPosts" instance=ExtResource("7_swwrx")]
 position = Vector2(2766, 1)
 
-[node name="LampPost18" parent="LampsPosts" instance=ExtResource("7_swwrx")]
+[node name="LampPost18" parent="Objects/LampsPosts" instance=ExtResource("7_swwrx")]
 position = Vector2(5966, 97)
 
-[node name="LampPost19" parent="LampsPosts" instance=ExtResource("7_swwrx")]
+[node name="LampPost19" parent="Objects/LampsPosts" instance=ExtResource("7_swwrx")]
 position = Vector2(6379, 320)
 
-[node name="LampPost21" parent="LampsPosts" instance=ExtResource("7_swwrx")]
+[node name="LampPost21" parent="Objects/LampsPosts" instance=ExtResource("7_swwrx")]
 position = Vector2(7037, 160)
 
-[node name="LampPost22" parent="LampsPosts" instance=ExtResource("7_swwrx")]
+[node name="LampPost22" parent="Objects/LampsPosts" instance=ExtResource("7_swwrx")]
 position = Vector2(7680, -32)
 
-[node name="LampPost20" parent="LampsPosts" instance=ExtResource("7_swwrx")]
+[node name="LampPost20" parent="Objects/LampsPosts" instance=ExtResource("7_swwrx")]
 position = Vector2(6690, 320)
+
+[node name="boxes" type="Node2D" parent="Objects"]
+
+[node name="10" type="Sprite2D" parent="Objects/boxes"]
+position = Vector2(4851, -46)
+texture = ExtResource("9_t62oi")
+
+[node name="11" type="Sprite2D" parent="Objects/boxes"]
+position = Vector2(7992, 18)
+texture = ExtResource("10_8506i")
+
+[node name="12" type="Sprite2D" parent="Objects/boxes"]
+position = Vector2(7921, 18)
+texture = ExtResource("11_hjsof")
+flip_h = true
+
+[node name="13" type="Sprite2D" parent="Objects/boxes"]
+position = Vector2(7992, -3)
+texture = ExtResource("10_8506i")
+
+[node name="14" type="Sprite2D" parent="Objects/boxes"]
+position = Vector2(7992, -25)
+texture = ExtResource("10_8506i")
+
+[node name="15" type="Sprite2D" parent="Objects/boxes"]
+position = Vector2(7971, 18)
+texture = ExtResource("10_8506i")
+
+[node name="16" type="Sprite2D" parent="Objects/boxes"]
+position = Vector2(7970, -3)
+texture = ExtResource("10_8506i")
+
+[node name="17" type="Sprite2D" parent="Objects/boxes"]
+position = Vector2(7757, 18)
+texture = ExtResource("12_tahg1")
+
+[node name="18" type="Sprite2D" parent="Objects/boxes"]
+position = Vector2(7821, 19)
+texture = ExtResource("13_m0yme")
+
+[node name="19" type="Sprite2D" parent="Objects/boxes"]
+position = Vector2(7821, 1)
+texture = ExtResource("9_t62oi")
+
+[node name="20" type="Sprite2D" parent="Objects/boxes"]
+position = Vector2(7849, 18)
+texture = ExtResource("11_hjsof")
+
+[node name="4" type="Sprite2D" parent="Objects/boxes"]
+position = Vector2(3720, 50)
+texture = ExtResource("10_8506i")
+
+[node name="5" type="Sprite2D" parent="Objects/boxes"]
+position = Vector2(3697, 50)
+texture = ExtResource("10_8506i")
+
+[node name="6" type="Sprite2D" parent="Objects/boxes"]
+position = Vector2(3676, 51)
+texture = ExtResource("9_t62oi")
+
+[node name="7" type="Sprite2D" parent="Objects/boxes"]
+position = Vector2(3736, 50)
+texture = ExtResource("13_m0yme")
+flip_h = true
+
+[node name="8" type="Sprite2D" parent="Objects/boxes"]
+position = Vector2(3713, 29)
+texture = ExtResource("9_t62oi")
+
+[node name="1" type="Sprite2D" parent="Objects/boxes"]
+position = Vector2(591, 50)
+texture = ExtResource("10_8506i")
+
+[node name="2" type="Sprite2D" parent="Objects/boxes"]
+position = Vector2(619, 50)
+texture = ExtResource("11_hjsof")
+flip_h = true
+
+[node name="3" type="Sprite2D" parent="Objects/boxes"]
+position = Vector2(602, 30)
+texture = ExtResource("13_m0yme")
+
+[node name="9" type="Sprite2D" parent="Objects/boxes"]
+position = Vector2(4368, -47)
+texture = ExtResource("10_8506i")
+
+[node name="Bench" type="Sprite2D" parent="Objects"]
+position = Vector2(110, 55)
+texture = ExtResource("14_bdbrh")
+flip_h = true
+
+[node name="GarbageCan2" type="Sprite2D" parent="Objects"]
+position = Vector2(3759, 51)
+scale = Vector2(2, 2)
+texture = ExtResource("15_ieykd")
+
+[node name="Fireplugs" type="Node2D" parent="Objects"]
+
+[node name="6" type="Sprite2D" parent="Objects/Fireplugs"]
+position = Vector2(4754, -43)
+texture = ExtResource("16_n0y5n")
+
+[node name="2" type="Sprite2D" parent="Objects/Fireplugs"]
+position = Vector2(1008, 53)
+texture = ExtResource("17_qb7io")
+
+[node name="3" type="Sprite2D" parent="Objects/Fireplugs"]
+position = Vector2(2460, 149)
+texture = ExtResource("18_pruqp")
+
+[node name="4" type="Sprite2D" parent="Objects/Fireplugs"]
+position = Vector2(1826, 149)
+texture = ExtResource("17_qb7io")
+
+[node name="1" type="Sprite2D" parent="Objects/Fireplugs"]
+position = Vector2(3150, 53)
+texture = ExtResource("16_n0y5n")
+
+[node name="5" type="Sprite2D" parent="Objects/Fireplugs"]
+position = Vector2(3795, -43)
+texture = ExtResource("16_n0y5n")
+
+[node name="21" type="Sprite2D" parent="Objects/Fireplugs"]
+position = Vector2(-211, 52)
+texture = ExtResource("16_n0y5n")
+
+[node name="22" type="Sprite2D" parent="Objects/Fireplugs"]
+position = Vector2(-509, -11)
+texture = ExtResource("16_n0y5n")
+
+[node name="7" type="Sprite2D" parent="Objects/Fireplugs"]
+position = Vector2(5429, -43)
+texture = ExtResource("19_bm84f")
+
+[node name="8" type="Sprite2D" parent="Objects/Fireplugs"]
+position = Vector2(5996, 149)
+texture = ExtResource("17_qb7io")
+
+[node name="9" type="Sprite2D" parent="Objects/Fireplugs"]
+position = Vector2(6720, 373)
+texture = ExtResource("18_pruqp")
+
+[node name="10" type="Sprite2D" parent="Objects/Fireplugs"]
+position = Vector2(7152, 212)
+texture = ExtResource("16_n0y5n")
+
+[node name="pointers" type="Node2D" parent="Objects"]
+
+[node name="5" type="Sprite2D" parent="Objects/pointers"]
+position = Vector2(7884, 0)
+texture = ExtResource("20_6g7x7")
+
+[node name="2" type="Sprite2D" parent="Objects/pointers"]
+position = Vector2(5258, -64)
+texture = ExtResource("21_2neji")
+
+[node name="4" type="Sprite2D" parent="Objects/pointers"]
+position = Vector2(6799, 353)
+texture = ExtResource("20_6g7x7")
+
+[node name="1" type="Sprite2D" parent="Objects/pointers"]
+position = Vector2(1227, 34)
+texture = ExtResource("21_2neji")
+
+[node name="3" type="Sprite2D" parent="Objects/pointers"]
+position = Vector2(1686, 128)
+texture = ExtResource("22_s5baj")
+
+[node name="11" type="Sprite2D" parent="Objects/pointers"]
+position = Vector2(-969, -32)
+texture = ExtResource("21_2neji")
+
+[node name="12" type="Sprite2D" parent="Objects/pointers"]
+position = Vector2(-274, -31)
+texture = ExtResource("23_ntupd")
+
+[node name="13" type="Sprite2D" parent="Objects/pointers"]
+position = Vector2(-305, -31)
+texture = ExtResource("24_lnd2a")
+
+[node name="6" type="Sprite2D" parent="Objects/pointers"]
+position = Vector2(3363, 32)
+texture = ExtResource("23_ntupd")
+
+[node name="7" type="Sprite2D" parent="Objects/pointers"]
+position = Vector2(6843, 194)
+texture = ExtResource("25_lquyi")
