@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 const JUMP_VELOCITY = -300.0
 const POWER_UP_TIMER = 3
 
@@ -138,3 +137,7 @@ func _on_timer_timeout() -> void:
 	$AnimatedSprite2D_Speed.visible = false
 	player_speed = 100.0
 	player_damage = 1
+
+#sacré singerie
+func player():
+	pass

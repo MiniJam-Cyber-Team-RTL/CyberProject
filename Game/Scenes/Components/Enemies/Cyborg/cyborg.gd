@@ -24,7 +24,6 @@ func _ready() -> void:
 	$Timer.wait_time = ATTACK_COOLDOWN
 
 func _physics_process(delta: float) -> void:
-	$Label.text = str(health)
 	if is_alive and !is_hurt:
 		if player_entered:
 			animation.flip_h = player.position.x < global_position.x
@@ -61,14 +60,16 @@ func hurted():
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	player_entered = true
-	switch_progression.emit(false)
-	player = body
+	if body.has_method('player'):
+		player_entered = true
+		switch_progression.emit(false)
+		player = body
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	player_entered = false
-	switch_progression.emit(true)
-	player = null
+	if body.has_method('player'):
+		player_entered = false
+		switch_progression.emit(true)
+		player = null
 
 
 
