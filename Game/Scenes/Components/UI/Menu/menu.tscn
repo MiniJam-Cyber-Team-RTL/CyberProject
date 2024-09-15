@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://btqrrm4t52pby"]
+[gd_scene load_steps=5 format=3 uid="uid://btqrrm4t52pby"]
 
-[ext_resource type="Script" path="res://Scenes/Components/UI/menu.gd" id="1_7wwwo"]
-[ext_resource type="Texture2D" uid="uid://d3en2btd55vcs" path="res://Assets/Images/UI/play.png" id="2_i4u3y"]
-[ext_resource type="Texture2D" uid="uid://bt0km5e7vcxr8" path="res://Assets/Images/UI/quit.png" id="3_lvulb"]
-[ext_resource type="Texture2D" uid="uid://c7v88l0a8u2vj" path="res://Assets/Images/UI/menu_title.png" id="4_e784y"]
-[ext_resource type="AudioStream" uid="uid://b8k3rlqgkewoq" path="res://Assets/Sounds/UI/UI_confirm.wav" id="5_8ac88"]
+[ext_resource type="Script" path="res://Scenes/Components/UI/Menu/menu.gd" id="1_ylw66"]
+[ext_resource type="Texture2D" uid="uid://c7v88l0a8u2vj" path="res://Assets/Images/Icons/menu_title.png" id="2_u2j7l"]
+[ext_resource type="Texture2D" uid="uid://d3en2btd55vcs" path="res://Assets/Images/Icons/play.png" id="3_hyvqp"]
+[ext_resource type="Texture2D" uid="uid://bt0km5e7vcxr8" path="res://Assets/Images/Icons/quit.png" id="4_tkt7j"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -52,8 +51,6 @@ text = "Quit Game"
 icon = ExtResource("4_tkt7j")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_8ac88")
-volume_db = -15.0
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit game" to="." method="_on_quit_game_pressed"]
