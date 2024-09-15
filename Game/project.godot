@@ -12,14 +12,12 @@ config_version=5
 
 config/name="CyberProject"
 run/main_scene="res://Scenes/Screens/TestMain/test.tscn"
-
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [dotnet]
 
 project/assembly_name="CyberProject"
-
 
 [rendering]
 
