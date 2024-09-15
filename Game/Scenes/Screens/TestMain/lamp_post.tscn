@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cafopjuouyu2y"]
+
+[ext_resource type="Texture2D" uid="uid://co67sim8vcsfm" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Lamp_post.png" id="1_mtr7y"]
+
+[sub_resource type="Gradient" id="Gradient_hsvvm"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_el7ud"]
+gradient = SubResource("Gradient_hsvvm")
+fill = 1
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.530172, 1)
+
+[node name="LampPost" type="Sprite2D"]
+position = Vector2(245, 69)
+texture = ExtResource("1_mtr7y")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(10, 5.5)
+scale = Vector2(1.0625, 2.04688)
+energy = 1.14
+texture = SubResource("GradientTexture2D_el7ud")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
