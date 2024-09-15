@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://btqrrm4t52pby"]
+
+[ext_resource type="Script" path="res://Scenes/Components/UI/Menu/menu.gd" id="1_ylw66"]
+[ext_resource type="Texture2D" uid="uid://c7v88l0a8u2vj" path="res://Assets/Images/Icons/menu_title.png" id="2_u2j7l"]
+[ext_resource type="Texture2D" uid="uid://d3en2btd55vcs" path="res://Assets/Images/Icons/play.png" id="3_hyvqp"]
+[ext_resource type="Texture2D" uid="uid://bt0km5e7vcxr8" path="res://Assets/Images/Icons/quit.png" id="4_tkt7j"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ylw66")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_u2j7l")
+expand_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+alignment = 1
+
+[node name="Play" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play"
+icon = ExtResource("3_hyvqp")
+
+[node name="Quit game" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit Game"
+icon = ExtResource("4_tkt7j")
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit game" to="." method="_on_quit_game_pressed"]
