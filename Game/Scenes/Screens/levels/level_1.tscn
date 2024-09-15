@@ -1,8 +1,7 @@
-[gd_scene load_steps=92 format=3 uid="uid://drqkkm5d62dbl"]
+[gd_scene load_steps=91 format=3 uid="uid://drqkkm5d62dbl"]
 
 [ext_resource type="Texture2D" uid="uid://cr8nhgmewvmwd" path="res://Assets/Images/Environment/Levels/industrial-zone-tileset-pixel-art/PSD/Tiles.png" id="1_36rlo"]
 [ext_resource type="PackedScene" uid="uid://miuef0jthcb0" path="res://Scenes/Screens/TestMain/residential.tscn" id="1_fpcgy"]
-[ext_resource type="PackedScene" uid="uid://b1fqsk12ovt0j" path="res://Scenes/Screens/TestMain/test_overlay.tscn" id="3_ppe6q"]
 [ext_resource type="Texture2D" uid="uid://dnqrk2kjev374" path="res://Assets/Images/Environment/Levels/green-zone-tileset-pixel-art/3 Objects/Fence/2.png" id="5_nqb26"]
 [ext_resource type="Texture2D" uid="uid://c6ugacoect1hr" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Symbols/1.png" id="7_508i7"]
 [ext_resource type="PackedScene" uid="uid://cafopjuouyu2y" path="res://Scenes/Screens/TestMain/lamp_post.tscn" id="7_swwrx"]
@@ -546,11 +545,6 @@ position = Vector2(-779, -34)
 position = Vector2(0, -83)
 zoom = Vector2(2, 2)
 limit_bottom = 1100
-
-[node name="PointLight2D" parent="Player/Camera2D" instance=ExtResource("3_ppe6q")]
-position = Vector2(-0.999962, 1.00001)
-scale = Vector2(0.324444, 0.273333)
-energy = 1.0
 
 [node name="TileMap" type="TileMap" parent="."]
 visibility_layer = 2
