@@ -1,5 +1,5 @@
 extends CanvasLayer
-	
+
 func show_power_up(type, value = null):
 	match type :
 		1: $MarginContainer/HBoxContainer/PlayerPowerUps/Damage.show(); if value: update_damage(value)
