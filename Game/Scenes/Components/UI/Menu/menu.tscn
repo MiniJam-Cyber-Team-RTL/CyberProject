@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://btqrrm4t52pby"]
+[gd_scene load_steps=6 format=3 uid="uid://btqrrm4t52pby"]
 
 [ext_resource type="Script" path="res://Scenes/Components/UI/Menu/menu.gd" id="1_ylw66"]
 [ext_resource type="Texture2D" uid="uid://c7v88l0a8u2vj" path="res://Assets/Images/Icons/menu_title.png" id="2_u2j7l"]
 [ext_resource type="Texture2D" uid="uid://d3en2btd55vcs" path="res://Assets/Images/Icons/play.png" id="3_hyvqp"]
 [ext_resource type="Texture2D" uid="uid://bt0km5e7vcxr8" path="res://Assets/Images/Icons/quit.png" id="4_tkt7j"]
+[ext_resource type="AudioStream" uid="uid://b6njpn5ty2314" path="res://Assets/Sounds/Music/menu_music.mp3" id="5_mn6hl"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -51,6 +52,10 @@ text = "Quit Game"
 icon = ExtResource("4_tkt7j")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_mn6hl")
+volume_db = -20.0
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Quit game" to="." method="_on_quit_game_pressed"]
