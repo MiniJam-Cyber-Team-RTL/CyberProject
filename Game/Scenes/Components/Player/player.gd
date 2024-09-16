@@ -11,7 +11,9 @@ var is_running = false # si quelqu'un vois ce code je n'ai plus aucune crédibil
 var is_punching = false
 
 var entered_enemie = false
+var entered_puzzle = false
 var enemy = null
+var puzzle = null
 var is_alive = true
 var is_hurt = false
 
@@ -172,11 +174,17 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group('enemie'):
 		entered_enemie = true
 		enemy = body
+	if body.has_method('puzzle'):
+		puzzle = body
+		entered_puzzle = true
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group('enemie'):
 		entered_enemie = false
 		enemy = null
+	if body.has_method('puzzle'):
+		puzzle = null
+		entered_puzzle = false
 
 
 func _on_animated_sprite_2d_main_animation_finished() -> void:
@@ -196,6 +204,8 @@ func _on_animated_sprite_2d_main_frame_changed() -> void:
 	if $AnimatedSprite2D_Main.animation == "punch" and $AnimatedSprite2D_Main.frame == 4 and entered_enemie:
 		print("TAPER TAOER TAPER")
 		enemy.deacrease_health(player_damage)
+	if $AnimatedSprite2D_Main.animation == "punch" and $AnimatedSprite2D_Main.frame == 4 and entered_puzzle:
+		puzzle.destroy()
 
 
 func _on_timer_speed_timeout() -> void:

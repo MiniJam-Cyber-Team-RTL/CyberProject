@@ -1,5 +1,6 @@
-[gd_scene load_steps=94 format=3 uid="uid://drqkkm5d62dbl"]
+[gd_scene load_steps=97 format=3 uid="uid://drqkkm5d62dbl"]
 
+[ext_resource type="Script" path="res://Scenes/Screens/levels/level_1.gd" id="1_2c0xy"]
 [ext_resource type="Texture2D" uid="uid://cr8nhgmewvmwd" path="res://Assets/Images/Environment/Levels/industrial-zone-tileset-pixel-art/PSD/Tiles.png" id="1_36rlo"]
 [ext_resource type="PackedScene" uid="uid://miuef0jthcb0" path="res://Scenes/Screens/TestMain/residential.tscn" id="1_fpcgy"]
 [ext_resource type="Texture2D" uid="uid://dnqrk2kjev374" path="res://Assets/Images/Environment/Levels/green-zone-tileset-pixel-art/3 Objects/Fence/2.png" id="5_nqb26"]
@@ -88,6 +89,7 @@
 [ext_resource type="Texture2D" uid="uid://dkalpc4rhnj5y" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Symbols/21.png" id="86_on4uc"]
 [ext_resource type="PackedScene" uid="uid://c7k7746rrvsnc" path="res://Scenes/Components/PowersUp/PowerUpSpeed/power_up_speed.tscn" id="87_wkfhc"]
 [ext_resource type="PackedScene" uid="uid://fyrquysaf0da" path="res://Scenes/Components/PowersUp/PowerUpHealth/power_up_health.tscn" id="88_8q0nr"]
+[ext_resource type="PackedScene" uid="uid://7vg4uhqptwaw" path="res://Scenes/Components/Puzzle/Box/box.tscn" id="90_rf6f0"]
 
 [sub_resource type="Environment" id="Environment_msalp"]
 background_mode = 3
@@ -532,7 +534,11 @@ sources/0 = SubResource("TileSetAtlasSource_n6ykm")
 sources/4 = SubResource("TileSetAtlasSource_2wk2i")
 sources/5 = SubResource("TileSetAtlasSource_ecal6")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2xa0p"]
+size = Vector2(281, 546)
+
 [node name="Level 1" type="Node2D"]
+script = ExtResource("1_2c0xy")
 metadata/_edit_horizontal_guides_ = [75.0]
 metadata/_edit_vertical_guides_ = [3548.0]
 
@@ -1735,3 +1741,14 @@ position = Vector2(-168, -107)
 
 [node name="power_up_health" parent="." instance=ExtResource("88_8q0nr")]
 position = Vector2(-746, -31)
+
+[node name="EndLevelArea" type="Area2D" parent="."]
+
+[node name="EndLevelCollision" type="CollisionShape2D" parent="EndLevelArea"]
+position = Vector2(8050.5, -242)
+shape = SubResource("RectangleShape2D_2xa0p")
+
+[node name="Box" parent="." instance=ExtResource("90_rf6f0")]
+position = Vector2(-548, -18)
+
+[connection signal="area_entered" from="EndLevelArea" to="." method="_on_end_level_area_area_entered"]
