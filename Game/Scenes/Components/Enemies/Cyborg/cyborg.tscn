@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://duq4t6d8651fj"]
+[gd_scene load_steps=36 format=3 uid="uid://duq4t6d8651fj"]
 
 [ext_resource type="Texture2D" uid="uid://bwjmilladtjl8" path="res://Assets/Images/Sprites/Cyborg/Cyborg_attack3.png" id="1_3byse"]
 [ext_resource type="Script" path="res://Scenes/Components/Enemies/Cyborg/cyborg.gd" id="1_ksxup"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://cr7ewfnheo1ct" path="res://Assets/Images/Sprites/Cyborg/Cyborg_hurt.png" id="3_xlbap"]
 [ext_resource type="Texture2D" uid="uid://bv4xy77jgw0ef" path="res://Assets/Images/Sprites/Cyborg/Cyborg_idle.png" id="4_lp7je"]
 [ext_resource type="Texture2D" uid="uid://b7nqei8tjeu50" path="res://Assets/Images/Sprites/Cyborg/Cyborg_run.png" id="5_q3y2u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_appai"]
+size = Vector2(20, 35)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j28iq"]
 atlas = ExtResource("1_3byse")
@@ -226,6 +229,12 @@ height = 48.0
 
 [node name="Cyborg" type="CharacterBody2D" groups=["enemie"]]
 script = ExtResource("1_ksxup")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-11, 6)
+shape = SubResource("RectangleShape2D_appai")
+one_way_collision = true
+one_way_collision_margin = 0.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8e7u2")

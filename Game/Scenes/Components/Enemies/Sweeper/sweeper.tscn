@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://d2m0gp8bjs68r"]
+[gd_scene load_steps=34 format=3 uid="uid://d2m0gp8bjs68r"]
 
 [ext_resource type="Script" path="res://Scenes/Components/Enemies/Sweeper/sweeper.gd" id="1_811k4"]
 [ext_resource type="Texture2D" uid="uid://bwpw7rp6l55q2" path="res://Assets/Images/Sprites/Sweeper/Idle.png" id="1_if70i"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://c48mcyuw7ax7s" path="res://Assets/Images/Sprites/Sweeper/Walk.png" id="2_drpwe"]
 [ext_resource type="Texture2D" uid="uid://yjief71gqhla" path="res://Assets/Images/Sprites/Sweeper/Death.png" id="3_6uinx"]
 [ext_resource type="Texture2D" uid="uid://tnr8nm58jkfj" path="res://Assets/Images/Sprites/Sweeper/Hurt.png" id="3_n1sbn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfbfn"]
+size = Vector2(22, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n8v32"]
 atlas = ExtResource("2_dfbuu")
@@ -218,6 +221,12 @@ height = 50.0
 
 [node name="Sweeper" type="CharacterBody2D" groups=["enemie"]]
 script = ExtResource("1_811k4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 7)
+shape = SubResource("RectangleShape2D_cfbfn")
+one_way_collision = true
+one_way_collision_margin = 0.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_g3t7a")

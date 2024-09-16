@@ -174,7 +174,7 @@ func player():
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	print("je detecte", body)
-	if body.get_parent().is_in_group('enemie'):
+	if body.is_in_group('enemie'):
 		entered_enemie = true
 		enemy = body
 	if body.get_parent().has_method('puzzle'):
