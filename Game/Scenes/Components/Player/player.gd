@@ -98,8 +98,6 @@ func _physics_process(delta: float) -> void:
 			is_jumping = velocity.y < 0
 
 			# C'est DéGEULASSSE mais bon... JE NE SAIT PAS FAIRE DE ANIM TREE AU SECOURS AIDEZ MOIIIIIIIIIII
-			if $AnimatedSprite2D_Main.animation == "punch" and $AnimatedSprite2D_Main.frame_progress == 1:
-				is_punching = false
 
 		if !$"MusicPlayer".is_playing():
 			$"MusicPlayer".play()
@@ -183,6 +181,8 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 
 func _on_animated_sprite_2d_main_animation_finished() -> void:
+	if $AnimatedSprite2D_Main.animation == "punch":
+		is_punching = false
 	if $AnimatedSprite2D_Main.animation == "hurt":
 		if player_life < 1 and is_alive:
 			is_alive = false
@@ -195,9 +195,10 @@ func _on_animated_sprite_2d_main_animation_finished() -> void:
 		# je fais ca sous la contrainte c'est affreux j'ai honte d'écrire ça
 		get_tree().change_scene_to_file("res://Scenes/Screens/Main/main.tscn")
 
+
 func _on_animated_sprite_2d_main_frame_changed() -> void:
 	if $AnimatedSprite2D_Main.animation == "punch" and $AnimatedSprite2D_Main.frame == 4 and entered_enemie:
-		enemy.deacrease_health(player_damage)
+		enemy.decrease_health(player_damage)
 	if $AnimatedSprite2D_Main.animation == "punch" and $AnimatedSprite2D_Main.frame == 4 and entered_puzzle:
 		puzzle.get_parent().destroy()
 
