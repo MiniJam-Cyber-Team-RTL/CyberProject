@@ -67,9 +67,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		player = body
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	player_entered = false
-	switch_progression.emit(true)
-	player = null
+	if body.has_method('player'):
+		player_entered = false
+		switch_progression.emit(true)
+		player = null
 
 
 

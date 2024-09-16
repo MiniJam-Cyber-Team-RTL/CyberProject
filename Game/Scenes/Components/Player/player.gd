@@ -172,10 +172,10 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		entered_puzzle = true
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body.get_parent().is_in_group('enemie'):
+	if body.is_in_group('enemie'):
 		entered_enemie = false
 		enemy = null
-	if body.get_parent().has_method('puzzle'):
+	if body.has_method('puzzle'):
 		puzzle = null
 		entered_puzzle = false
 
