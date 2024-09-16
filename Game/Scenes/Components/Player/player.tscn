@@ -225,7 +225,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hurt",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -485,7 +485,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hurt_red",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -745,7 +745,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hurt_yellow",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -858,7 +858,7 @@ shape = SubResource("RectangleShape2D_pbovi")
 [node name="AnimatedSprite2D_Main" type="AnimatedSprite2D" parent="."]
 position = Vector2(7.5, -1.5)
 sprite_frames = SubResource("SpriteFrames_w5dhm")
-animation = &"idle"
+animation = &"hurt"
 autoplay = "idle"
 
 [node name="AnimatedSprite2D_Power" type="AnimatedSprite2D" parent="."]
@@ -872,7 +872,7 @@ frame_progress = 1.0
 [node name="AnimatedSprite2D_Speed" type="AnimatedSprite2D" parent="."]
 position = Vector2(7.5, -1.5)
 sprite_frames = SubResource("SpriteFrames_vwth1")
-animation = &"death_yellow"
+animation = &"hurt_yellow"
 autoplay = "idle_yellow"
 
 [node name="Timer_Speed" type="Timer" parent="."]
