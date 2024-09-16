@@ -30,30 +30,32 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wsou"]
-size = Vector2(28, 22)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_f41pw"]
 radius = 41.0488
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wsou"]
+size = Vector2(28, 22)
 
 [node name="Box" type="Node2D"]
 script = ExtResource("1_l37md")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="RigidBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dxrbh")
 animation = &"death"
 frame = 4
 frame_progress = 1.0
 
+[node name="InteractZone" type="Area2D" parent="."]
+
+[node name="InteractZoneollision" type="CollisionShape2D" parent="InteractZone"]
+shape = SubResource("CircleShape2D_f41pw")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_0wsou")
 
-[node name="InteractZone" type="Area2D" parent="RigidBody2D"]
-
-[node name="InteractZoneollision" type="CollisionShape2D" parent="RigidBody2D/InteractZone"]
-shape = SubResource("CircleShape2D_f41pw")
-
-[connection signal="area_entered" from="RigidBody2D/InteractZone" to="." method="_on_interact_zone_area_entered"]
+[connection signal="area_entered" from="InteractZone" to="." method="_on_interact_zone_area_entered"]
+[connection signal="body_entered" from="InteractZone" to="." method="_on_interact_zone_body_entered"]
+[connection signal="body_exited" from="InteractZone" to="." method="_on_interact_zone_body_exited"]
