@@ -28,6 +28,7 @@ func _ready():
 	$"MusicPlayer".play()
 	$Area2D/CollisionShape2D_Right.disabled = true
 	$Area2D/CollisionShape2D_Left.disabled = true
+	update_ui.emit()
 
 signal update_ui
 	
@@ -139,6 +140,8 @@ func take_damage(damage: int):
 	if damage > 0:
 		print("ca fait mal")
 		player_life -= damage
+		var ui = get_node("/root/Main/CanvasLayer/MarginContainer")
+		ui.update_health(player_life)
 		is_hurt = true
 		play_anim("hurt")
 		
@@ -161,8 +164,8 @@ func pickup_power_up(type):
 		ui.show_power_up(type, POWER_UP_TIMER)
 		$Timer_Speed.start()
 	else:
-		ui.show_power_up(type, POWER_UP_TIMER)
 		player_life += 1
+		ui.update_health(player_life)
 	
 #sacré singerie
 func player():
@@ -193,6 +196,8 @@ func _on_animated_sprite_2d_main_animation_finished() -> void:
 		if player_life < 1 and is_alive:
 			is_alive = false
 			$AnimatedSprite2D_Main.play("death")
+			await get_tree().create_timer(0.9).timeout
+			get_tree().change_scene_to_file("res://Scenes/Screens/Main/main.tscn")
 		else:
 			is_hurt = false
 	elif $AnimatedSprite2D_Main.animation == "death":

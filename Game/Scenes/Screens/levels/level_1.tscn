@@ -59,7 +59,7 @@
 [ext_resource type="Texture2D" uid="uid://dxtq5qv7y26tn" path="res://Assets/Images/Environment/Levels/green-zone-tileset-pixel-art/3 Objects/Bushes/3.png" id="41_l6hoc"]
 [ext_resource type="Texture2D" uid="uid://cv5bcnmu0c34m" path="res://Assets/Images/Environment/Levels/green-zone-tileset-pixel-art/3 Objects/Bushes/4.png" id="42_oe11f"]
 [ext_resource type="Texture2D" uid="uid://2diyyh67ie3m" path="res://Assets/Images/Environment/Levels/green-zone-tileset-pixel-art/3 Objects/Other/Tree4.png" id="43_2n6po"]
-[ext_resource type="PackedScene" uid="uid://b7u7ql1yoxqll" path="res://Scenes/Components/Decors/fountain.tscn" id="44_fnjjl"]
+[ext_resource type="PackedScene" uid="uid://b7u7ql1yoxqll" path="res://Scenes/Screens/TestMain/fountain.tscn" id="44_fnjjl"]
 [ext_resource type="Texture2D" uid="uid://uupwkhpody8b" path="res://Assets/Images/Environment/Levels/green-zone-tileset-pixel-art/3 Objects/Benches/2.png" id="61_ykk71"]
 [ext_resource type="Texture2D" uid="uid://coueeh0weo4f7" path="res://Assets/Images/Environment/Levels/green-zone-tileset-pixel-art/3 Objects/Benches/3.png" id="62_w1vvm"]
 [ext_resource type="Texture2D" uid="uid://dlxgll4iscbc6" path="res://Assets/Images/Environment/Levels/green-zone-tileset-pixel-art/3 Objects/Benches/1.png" id="64_lu6dj"]

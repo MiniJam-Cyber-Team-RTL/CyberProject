@@ -43,7 +43,7 @@ expand_mode = 2
 [node name="PlayerHealthLabel" type="Label" parent="HBoxContainer/PlayerHealth/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
-text = "000"
+text = "5"
 
 [node name="PlayerPowerUps" type="HBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
