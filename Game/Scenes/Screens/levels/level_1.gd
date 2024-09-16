@@ -13,3 +13,10 @@ func _process(delta: float) -> void:
 
 func _on_end_level_area_area_entered(area: Area2D) -> void:
 	get_tree().change_scene_to_file("res://Scenes/Components/UI/Menu/end.tscn")
+
+
+func _on_player_update_ui() -> void:
+	var ui = get_parent().get_node("CanvasLayer/MarginContainer")
+	ui.update_damage($Player/Timer_Power.time_left)
+	ui.update_speed($Player/Timer_Speed.time_left)
+	ui.update_health($Player.player_life)

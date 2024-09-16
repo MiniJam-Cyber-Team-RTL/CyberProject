@@ -17,9 +17,9 @@ func puzzle():
 	pass
 
 func destroy():
-	print("JE suis une boxe qui meurt")
+	print("JE suis une door qui meurt")
 	$AnimatedSprite2D.play("death")
-
+	$RigidBody2D/CollisionShape2D.disabled = true
 
 func _on_interact_zone_body_entered(body: Node2D) -> void:
 	if body.has_method('player'):
