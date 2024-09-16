@@ -330,10 +330,6 @@ position = Vector2(759, -154)
 scale = Vector2(3, 3)
 texture = ExtResource("7_vdpsy")
 
-[node name="Box" parent="." instance=ExtResource("8_1b6g0")]
-position = Vector2(577, -106)
-scale = Vector2(6.5, 6.5)
-
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 offset_left = 344.0
 offset_top = -156.0
@@ -354,7 +350,10 @@ Go find her !
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(921, -228)
+position = Vector2(670, -231)
 shape = SubResource("RectangleShape2D_n4ntn")
+
+[node name="Door" parent="." instance=ExtResource("8_1b6g0")]
+position = Vector2(576, -105)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

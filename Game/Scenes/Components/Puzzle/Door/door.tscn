@@ -71,16 +71,18 @@ animations = [{
 radius = 41.0488
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wsou"]
-size = Vector2(20, 30)
+size = Vector2(20, 31)
 
-[node name="Box" type="Node2D" groups=["puzzle"]]
+[node name="Door" type="Node2D" groups=["puzzle"]]
 script = ExtResource("1_eausd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(6.5, 6.5)
 sprite_frames = SubResource("SpriteFrames_dxrbh")
 animation = &"death"
 
 [node name="InteractZone" type="Area2D" parent="."]
+scale = Vector2(6.5, 6.5)
 
 [node name="InteractZoneollision" type="CollisionShape2D" parent="InteractZone"]
 shape = SubResource("CircleShape2D_f41pw")
@@ -88,9 +90,9 @@ shape = SubResource("CircleShape2D_f41pw")
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(0, 2)
+position = Vector2(0, 3.25)
+scale = Vector2(6.5, 6.5)
 shape = SubResource("RectangleShape2D_0wsou")
 
-[connection signal="area_entered" from="InteractZone" to="." method="_on_interact_zone_area_entered"]
 [connection signal="body_entered" from="InteractZone" to="." method="_on_interact_zone_body_entered"]
 [connection signal="body_exited" from="InteractZone" to="." method="_on_interact_zone_body_exited"]
