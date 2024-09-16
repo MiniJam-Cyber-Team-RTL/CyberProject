@@ -36,7 +36,7 @@ radius = 41.0488
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wsou"]
 size = Vector2(28, 22)
 
-[node name="Box" type="Node2D"]
+[node name="Box" type="Node2D" groups=["puzzle"]]
 script = ExtResource("1_l37md")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

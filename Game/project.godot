@@ -25,6 +25,7 @@ project/assembly_name="CyberProject"
 [global_group]
 
 enemie=""
+puzzle=""
 
 [input]
 

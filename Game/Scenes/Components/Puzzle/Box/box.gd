@@ -13,8 +13,11 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 
+func puzzle():
+	pass
 
 func destroy():
+	print("JE suis une boxe qui meurt")
 	$AnimatedSprite2D_Main.play("death")
 	self.translate(Vector2(900,900))
 
