@@ -18,8 +18,7 @@ func puzzle():
 
 func destroy():
 	print("JE suis une boxe qui meurt")
-	$AnimatedSprite2D_Main.play("death")
-	self.translate(Vector2(900,900))
+	$AnimatedSprite2D.play("death")
 
 
 func _on_interact_zone_body_entered(body: Node2D) -> void:

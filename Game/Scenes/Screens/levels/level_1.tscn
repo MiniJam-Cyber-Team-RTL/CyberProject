@@ -1751,4 +1751,5 @@ shape = SubResource("RectangleShape2D_2xa0p")
 [node name="Box" parent="." instance=ExtResource("90_rf6f0")]
 position = Vector2(-548, -18)
 
+[connection signal="update_ui" from="Player" to="." method="_on_player_update_ui"]
 [connection signal="area_entered" from="EndLevelArea" to="." method="_on_end_level_area_area_entered"]

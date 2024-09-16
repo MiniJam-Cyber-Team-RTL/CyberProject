@@ -29,9 +29,12 @@ func _ready():
 	$Area2D/CollisionShape2D_Right.disabled = true
 	$Area2D/CollisionShape2D_Left.disabled = true
 
+signal update_ui
+	
 func _physics_process(delta: float) -> void:
 	if is_alive and !is_hurt:
-		var ui = get_node("/root/Main/CanvasLayer/MarginContainer")
+
+		#var ui = get_node("/root/Main/CanvasLayer/MarginContainer")
 		direction = Input.get_axis("ui_left", "ui_right")
 		is_facing_right = false if direction == -1 else true
 
@@ -97,10 +100,7 @@ func _physics_process(delta: float) -> void:
 
 		if !$"MusicPlayer".is_playing():
 			$"MusicPlayer".play()
-
-		ui.update_damage($Timer_Power.time_left)
-		ui.update_speed($Timer_Speed.time_left)
-		ui.update_health(player_life)
+		update_ui.emit()
 
 		move_and_slide()
 
@@ -111,6 +111,7 @@ func change_collision(collision1 : bool, collision2: bool):
 
 func play_anim(anim_name : String, face_direction : bool = true, play_forward: bool = true):
 	if anim_name != 'idle':
+		pass
 		print("je play " + anim_name)
 	#$AnimatedSprite2D_Main.animation = anim_name
 	#$AnimatedSprite2D_Power.animation = anim_name + "_red"
@@ -169,18 +170,20 @@ func player():
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group('enemie'):
+	print("je detecte", body)
+	if body.get_parent().is_in_group('enemie'):
 		entered_enemie = true
 		enemy = body
-	if body.has_method('puzzle'):
+	if body.get_parent().has_method('puzzle'):
+		print("Nouveau puzzle ma geule")
 		puzzle = body
 		entered_puzzle = true
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body.is_in_group('enemie'):
+	if body.get_parent().is_in_group('enemie'):
 		entered_enemie = false
 		enemy = null
-	if body.has_method('puzzle'):
+	if body.get_parent().has_method('puzzle'):
 		puzzle = null
 		entered_puzzle = false
 
@@ -201,7 +204,7 @@ func _on_animated_sprite_2d_main_frame_changed() -> void:
 		print("TAPER TAOER TAPER")
 		enemy.deacrease_health(player_damage)
 	if $AnimatedSprite2D_Main.animation == "punch" and $AnimatedSprite2D_Main.frame == 4 and entered_puzzle:
-		puzzle.destroy()
+		puzzle.get_parent().destroy()
 
 
 func _on_timer_speed_timeout() -> void:

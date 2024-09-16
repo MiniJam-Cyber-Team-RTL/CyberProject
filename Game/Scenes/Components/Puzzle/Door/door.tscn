@@ -79,7 +79,6 @@ script = ExtResource("1_eausd")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dxrbh")
 animation = &"death"
-frame_progress = 1.0
 
 [node name="InteractZone" type="Area2D" parent="."]
 
