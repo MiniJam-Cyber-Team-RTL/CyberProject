@@ -61,9 +61,10 @@ func hurted():
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	player_entered = true
-	switch_progression.emit(false)
-	player = body
+	if body.has_method('player'):
+		player_entered = true
+		switch_progression.emit(false)
+		player = body
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	player_entered = false
@@ -73,7 +74,7 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 
 
 func _on_animated_sprite_2d_frame_changed() -> void:
-	if animation.animation == "attack" and animation.frame == 4:
+	if animation.animation == "attack" and animation.frame == 4 and player:
 		print("Je tape le player")
 		player.take_damage(DAMAGE)
 		$Timer.start(ATTACK_COOLDOWN)
