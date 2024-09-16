@@ -1,6 +1,5 @@
 [gd_scene load_steps=108 format=3 uid="uid://drqkkm5d62dbl"]
 
-[ext_resource type="Script" path="res://Scenes/Screens/levels/level_1.gd" id="1_2c0xy"]
 [ext_resource type="Texture2D" uid="uid://cr8nhgmewvmwd" path="res://Assets/Images/Environment/Levels/industrial-zone-tileset-pixel-art/PSD/Tiles.png" id="1_36rlo"]
 [ext_resource type="PackedScene" uid="uid://miuef0jthcb0" path="res://Scenes/Components/Decors/residential.tscn" id="1_fpcgy"]
 [ext_resource type="Texture2D" uid="uid://dnqrk2kjev374" path="res://Assets/Images/Environment/Levels/green-zone-tileset-pixel-art/3 Objects/Fence/2.png" id="5_nqb26"]
@@ -90,11 +89,9 @@
 [ext_resource type="Texture2D" uid="uid://bjitf1t8s45p0" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/2 Background/Overlay_illumination.png" id="86_repxy"]
 [ext_resource type="PackedScene" uid="uid://c7k7746rrvsnc" path="res://Scenes/Components/PowersUp/PowerUpSpeed/power_up_speed.tscn" id="87_wkfhc"]
 [ext_resource type="PackedScene" uid="uid://fyrquysaf0da" path="res://Scenes/Components/PowersUp/PowerUpHealth/power_up_health.tscn" id="88_8q0nr"]
-
 [ext_resource type="PackedScene" uid="uid://crqn14yxahnbn" path="res://Scenes/Components/Path/path.tscn" id="90_oy6hr"]
 [ext_resource type="PackedScene" uid="uid://duq4t6d8651fj" path="res://Scenes/Components/Enemies/Cyborg/cyborg.tscn" id="91_0w5yd"]
 [ext_resource type="PackedScene" uid="uid://d2m0gp8bjs68r" path="res://Scenes/Components/Enemies/Sweeper/sweeper.tscn" id="92_hwpoh"]
-
 
 [sub_resource type="Environment" id="Environment_msalp"]
 background_mode = 3
@@ -600,7 +597,6 @@ _data = {
 point_count = 3
 
 [node name="Level 1" type="Node2D"]
-script = ExtResource("1_2c0xy")
 metadata/_edit_horizontal_guides_ = [75.0]
 metadata/_edit_vertical_guides_ = [3548.0]
 
