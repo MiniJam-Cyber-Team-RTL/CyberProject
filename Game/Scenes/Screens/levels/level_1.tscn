@@ -1,10 +1,10 @@
-[gd_scene load_steps=94 format=3 uid="uid://drqkkm5d62dbl"]
+[gd_scene load_steps=108 format=3 uid="uid://drqkkm5d62dbl"]
 
 [ext_resource type="Texture2D" uid="uid://cr8nhgmewvmwd" path="res://Assets/Images/Environment/Levels/industrial-zone-tileset-pixel-art/PSD/Tiles.png" id="1_36rlo"]
-[ext_resource type="PackedScene" uid="uid://miuef0jthcb0" path="res://Scenes/Screens/TestMain/residential.tscn" id="1_fpcgy"]
+[ext_resource type="PackedScene" uid="uid://miuef0jthcb0" path="res://Scenes/Components/Decors/residential.tscn" id="1_fpcgy"]
 [ext_resource type="Texture2D" uid="uid://dnqrk2kjev374" path="res://Assets/Images/Environment/Levels/green-zone-tileset-pixel-art/3 Objects/Fence/2.png" id="5_nqb26"]
 [ext_resource type="Texture2D" uid="uid://c6ugacoect1hr" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Symbols/1.png" id="7_508i7"]
-[ext_resource type="PackedScene" uid="uid://cafopjuouyu2y" path="res://Scenes/Screens/TestMain/lamp_post.tscn" id="7_swwrx"]
+[ext_resource type="PackedScene" uid="uid://cafopjuouyu2y" path="res://Scenes/Components/Decors/lamp_post.tscn" id="7_swwrx"]
 [ext_resource type="Texture2D" uid="uid://cjuhc8ba3p0uj" path="res://Assets/Images/Environment/Levels/billboards-and-advertising-pixel-art/2 Billboard/128x64.png" id="8_qdgck"]
 [ext_resource type="Texture2D" uid="uid://dawqwidnx5wdw" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/5 TileSet/Tiles_transparent.png" id="8_vus35"]
 [ext_resource type="Texture2D" uid="uid://d0mqfi77drhjg" path="res://Assets/Images/Environment/Levels/green-zone-tileset-pixel-art/5 TileSet/Tiles_block_transparent.png" id="9_0pina"]
@@ -59,7 +59,7 @@
 [ext_resource type="Texture2D" uid="uid://dxtq5qv7y26tn" path="res://Assets/Images/Environment/Levels/green-zone-tileset-pixel-art/3 Objects/Bushes/3.png" id="41_l6hoc"]
 [ext_resource type="Texture2D" uid="uid://cv5bcnmu0c34m" path="res://Assets/Images/Environment/Levels/green-zone-tileset-pixel-art/3 Objects/Bushes/4.png" id="42_oe11f"]
 [ext_resource type="Texture2D" uid="uid://2diyyh67ie3m" path="res://Assets/Images/Environment/Levels/green-zone-tileset-pixel-art/3 Objects/Other/Tree4.png" id="43_2n6po"]
-[ext_resource type="PackedScene" uid="uid://b7u7ql1yoxqll" path="res://Scenes/Screens/TestMain/fountain.tscn" id="44_fnjjl"]
+[ext_resource type="PackedScene" uid="uid://b7u7ql1yoxqll" path="res://Scenes/Components/Decors/fountain.tscn" id="44_fnjjl"]
 [ext_resource type="Texture2D" uid="uid://uupwkhpody8b" path="res://Assets/Images/Environment/Levels/green-zone-tileset-pixel-art/3 Objects/Benches/2.png" id="61_ykk71"]
 [ext_resource type="Texture2D" uid="uid://coueeh0weo4f7" path="res://Assets/Images/Environment/Levels/green-zone-tileset-pixel-art/3 Objects/Benches/3.png" id="62_w1vvm"]
 [ext_resource type="Texture2D" uid="uid://dlxgll4iscbc6" path="res://Assets/Images/Environment/Levels/green-zone-tileset-pixel-art/3 Objects/Benches/1.png" id="64_lu6dj"]
@@ -86,15 +86,19 @@
 [ext_resource type="Texture2D" uid="uid://yftksnrn65x0" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Symbols/20.png" id="85_nk50l"]
 [ext_resource type="PackedScene" uid="uid://bxdbka2xf3u13" path="res://Scenes/Components/PowersUp/PowerUpPower/power_up_power.tscn" id="86_51f63"]
 [ext_resource type="Texture2D" uid="uid://dkalpc4rhnj5y" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Symbols/21.png" id="86_on4uc"]
+[ext_resource type="Texture2D" uid="uid://bjitf1t8s45p0" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/2 Background/Overlay_illumination.png" id="86_repxy"]
 [ext_resource type="PackedScene" uid="uid://c7k7746rrvsnc" path="res://Scenes/Components/PowersUp/PowerUpSpeed/power_up_speed.tscn" id="87_wkfhc"]
 [ext_resource type="PackedScene" uid="uid://fyrquysaf0da" path="res://Scenes/Components/PowersUp/PowerUpHealth/power_up_health.tscn" id="88_8q0nr"]
+[ext_resource type="PackedScene" uid="uid://crqn14yxahnbn" path="res://Scenes/Components/Path/path.tscn" id="90_oy6hr"]
+[ext_resource type="PackedScene" uid="uid://duq4t6d8651fj" path="res://Scenes/Components/Enemies/Cyborg/cyborg.tscn" id="91_0w5yd"]
+[ext_resource type="PackedScene" uid="uid://d2m0gp8bjs68r" path="res://Scenes/Components/Enemies/Sweeper/sweeper.tscn" id="92_hwpoh"]
 
 [sub_resource type="Environment" id="Environment_msalp"]
 background_mode = 3
 glow_enabled = true
 glow_normalized = true
 glow_blend_mode = 1
-glow_hdr_threshold = 4.0
+glow_hdr_threshold = 2.0
 fog_light_energy = 1.5
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n6ykm"]
@@ -531,6 +535,66 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_n6ykm")
 sources/4 = SubResource("TileSetAtlasSource_2wk2i")
 sources/5 = SubResource("TileSetAtlasSource_ecal6")
+
+[sub_resource type="Curve2D" id="Curve2D_qp3rt"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 272, -240, 0, 0, 0, 0, 400, -240, 0, 0, 0, 0, 272, -240)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_qiw4k"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -432, -272, 0, 0, 0, 0, -189.762, -271.918, 0, 0, 0, 0, -432, -272)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_pcnc6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1936, -272, 0, 0, 0, 0, 2160, -272, 0, 0, 0, 0, 1936, -272)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_8d2do"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2640, -432, 0, 0, 0, 0, 2416, -432, 0, 0, 0, 0, 2640, -432)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_2hknp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 3056, -400, 0, 0, 0, 0, 3408, -400, 0, 0, 0, 0, 3056, -400)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_yv5ab"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 6864, -144, 0, 0, 0, 0, 6256, -144, 0, 0, 0, 0, 6864, -144)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_nrb2a"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -515, -143.985, 0, 0, 0, 0, -203, -143.985, 0, 0, 0, 0, -515, -143.985)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_6jk5w"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 2792, 48, 0, 0, 0, 0, 3168, 48, 0, 0, 0, 0, 2792, 48)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_2284h"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 6408, 368, 0, 0, 0, 0, 6688, 368, 0, 0, 0, 0, 6408, 368)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_xw530"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 5520, -48, 0, 0, 0, 0, 5296, -48, 0, 0, 0, 0, 5520, -48)
+}
+point_count = 3
 
 [node name="Level 1" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [75.0]
@@ -1717,6 +1781,23 @@ position = Vector2(6256, 77)
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("74_x4c52")
 
+[node name="pickups" type="Node2D" parent="Objects"]
+
+[node name="Power-up_power" parent="Objects/pickups" instance=ExtResource("86_51f63")]
+position = Vector2(2146.5, 138)
+
+[node name="Power-up_speed" parent="Objects/pickups" instance=ExtResource("87_wkfhc")]
+position = Vector2(681.006, -148.003)
+
+[node name="power_up_health" parent="Objects/pickups" instance=ExtResource("88_8q0nr")]
+position = Vector2(399.875, -339.512)
+
+[node name="power_up_health2" parent="Objects/pickups" instance=ExtResource("88_8q0nr")]
+position = Vector2(6766, 361.5)
+
+[node name="Power-up_power2" parent="Objects/pickups" instance=ExtResource("86_51f63")]
+position = Vector2(4979.33, -52.6668)
+
 [node name="Player" parent="." instance=ExtResource("85_hoh3x")]
 position = Vector2(-637, -124)
 scale = Vector2(1, 1)
@@ -1727,11 +1808,125 @@ scale = Vector2(0.25, 0.25)
 zoom = Vector2(2, 2)
 limit_bottom = 1100
 
-[node name="Power-up_power" parent="." instance=ExtResource("86_51f63")]
-position = Vector2(-440, -35)
+[node name="PointLight2D" type="PointLight2D" parent="Player/Camera2D2"]
+position = Vector2(1138, -7.00004)
+scale = Vector2(1.61778, 1.36)
+energy = 0.6
+texture = ExtResource("86_repxy")
 
-[node name="Power-up_speed" parent="." instance=ExtResource("87_wkfhc")]
-position = Vector2(-168, -107)
+[node name="enemies" type="Node2D" parent="."]
 
-[node name="power_up_health" parent="." instance=ExtResource("88_8q0nr")]
-position = Vector2(-746, -31)
+[node name="Path2D" parent="enemies" instance=ExtResource("90_oy6hr")]
+curve = SubResource("Curve2D_qp3rt")
+
+[node name="PathFollow2D" parent="enemies/Path2D" index="0"]
+position = Vector2(272, -240)
+
+[node name="Cyborg" parent="enemies/Path2D/PathFollow2D" index="0" instance=ExtResource("91_0w5yd")]
+position = Vector2(8, -8)
+
+[node name="Path2D3" parent="enemies" instance=ExtResource("90_oy6hr")]
+position = Vector2(1773.76, 127.918)
+curve = SubResource("Curve2D_qiw4k")
+
+[node name="PathFollow2D" parent="enemies/Path2D3" index="0"]
+position = Vector2(-432, -272)
+
+[node name="Cyborg" parent="enemies/Path2D3/PathFollow2D" index="0" instance=ExtResource("91_0w5yd")]
+position = Vector2(0, -8)
+
+[node name="Path2D6" parent="enemies" instance=ExtResource("90_oy6hr")]
+curve = SubResource("Curve2D_pcnc6")
+
+[node name="PathFollow2D" parent="enemies/Path2D6" index="0"]
+position = Vector2(1936, -272)
+
+[node name="Cyborg" parent="enemies/Path2D6/PathFollow2D" index="0" instance=ExtResource("91_0w5yd")]
+position = Vector2(7.78955, -8.03107)
+
+[node name="Path2D8" parent="enemies" instance=ExtResource("90_oy6hr")]
+curve = SubResource("Curve2D_8d2do")
+
+[node name="PathFollow2D" parent="enemies/Path2D8" index="0"]
+position = Vector2(2640, -432)
+
+[node name="Cyborg" parent="enemies/Path2D8/PathFollow2D" index="0" instance=ExtResource("91_0w5yd")]
+position = Vector2(4.80151, -8.05008)
+
+[node name="Path2D9" parent="enemies" instance=ExtResource("90_oy6hr")]
+curve = SubResource("Curve2D_2hknp")
+
+[node name="PathFollow2D" parent="enemies/Path2D9" index="0"]
+position = Vector2(3056, -400)
+
+[node name="Cyborg" parent="enemies/Path2D9/PathFollow2D" index="0" instance=ExtResource("91_0w5yd")]
+position = Vector2(8.13013, -8.07227)
+
+[node name="Path2D10" parent="enemies" instance=ExtResource("90_oy6hr")]
+curve = SubResource("Curve2D_yv5ab")
+
+[node name="PathFollow2D" parent="enemies/Path2D10" index="0"]
+position = Vector2(6864, -144)
+
+[node name="Cyborg" parent="enemies/Path2D10/PathFollow2D" index="0" instance=ExtResource("91_0w5yd")]
+position = Vector2(-0.0332031, -8.09932)
+
+[node name="Cyborg2" parent="enemies" instance=ExtResource("91_0w5yd")]
+position = Vector2(7731.17, 7.9388)
+
+[node name="Sweeper" parent="enemies" instance=ExtResource("92_hwpoh")]
+position = Vector2(2434.79, 135.908)
+
+[node name="Sweeper3" parent="enemies" instance=ExtResource("92_hwpoh")]
+position = Vector2(1136, 39.9219)
+
+[node name="Sweeper2" parent="enemies" instance=ExtResource("92_hwpoh")]
+position = Vector2(5750.81, 135.901)
+
+[node name="Path2D2" parent="enemies" instance=ExtResource("90_oy6hr")]
+position = Vector2(2195, 287.985)
+curve = SubResource("Curve2D_nrb2a")
+
+[node name="PathFollow2D" parent="enemies/Path2D2" index="0"]
+position = Vector2(-515, -143.985)
+
+[node name="Sweeper" parent="enemies/Path2D2/PathFollow2D" index="0" instance=ExtResource("92_hwpoh")]
+position = Vector2(13.0541, -8.02307)
+
+[node name="Path2D4" parent="enemies" instance=ExtResource("90_oy6hr")]
+curve = SubResource("Curve2D_6jk5w")
+
+[node name="PathFollow2D" parent="enemies/Path2D4" index="0"]
+position = Vector2(2792, 48)
+
+[node name="Sweeper" parent="enemies/Path2D4/PathFollow2D" index="0" instance=ExtResource("92_hwpoh")]
+position = Vector2(6.76367, -8.07813)
+
+[node name="Path2D5" parent="enemies" instance=ExtResource("90_oy6hr")]
+curve = SubResource("Curve2D_2284h")
+
+[node name="PathFollow2D" parent="enemies/Path2D5" index="0"]
+position = Vector2(6408, 368)
+
+[node name="Sweeper" parent="enemies/Path2D5/PathFollow2D" index="0" instance=ExtResource("92_hwpoh")]
+position = Vector2(16.7539, -8.03122)
+
+[node name="Path2D7" parent="enemies" instance=ExtResource("90_oy6hr")]
+curve = SubResource("Curve2D_xw530")
+
+[node name="PathFollow2D" parent="enemies/Path2D7" index="0"]
+position = Vector2(5520, -48)
+
+[node name="Sweeper" parent="enemies/Path2D7/PathFollow2D" index="0" instance=ExtResource("92_hwpoh")]
+position = Vector2(-0.111816, -8.03716)
+
+[editable path="enemies/Path2D"]
+[editable path="enemies/Path2D3"]
+[editable path="enemies/Path2D6"]
+[editable path="enemies/Path2D8"]
+[editable path="enemies/Path2D9"]
+[editable path="enemies/Path2D10"]
+[editable path="enemies/Path2D2"]
+[editable path="enemies/Path2D4"]
+[editable path="enemies/Path2D5"]
+[editable path="enemies/Path2D7"]
