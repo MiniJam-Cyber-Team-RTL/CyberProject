@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7u7ql1yoxqll"]
+
+[ext_resource type="Texture2D" uid="uid://bf5gyo7axaslh" path="res://Assets/Images/Environment/Levels/green-zone-tileset-pixel-art/4 Animated objects/Fountain.png" id="1_c53kc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wkpal"]
+atlas = ExtResource("1_c53kc")
+region = Rect2(0, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjx0k"]
+atlas = ExtResource("1_c53kc")
+region = Rect2(72, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcmrf"]
+atlas = ExtResource("1_c53kc")
+region = Rect2(144, 0, 72, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymsf7"]
+atlas = ExtResource("1_c53kc")
+region = Rect2(216, 0, 72, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cd652"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wkpal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjx0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bcmrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymsf7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_cd652")
+autoplay = "default"
