@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://clxgxeb8rxway"]
+[gd_scene load_steps=5 format=3 uid="uid://clxgxeb8rxway"]
 
 [ext_resource type="Script" path="res://Scenes/Components/UI/PauseMenu/pause_menu.gd" id="1_eagaq"]
+[ext_resource type="AudioStream" uid="uid://bdx2qoqu77h8q" path="res://Assets/Sounds/Music/pixabay_pause_music.mp3" id="2_6ldad"]
+[ext_resource type="AudioStream" uid="uid://b8k3rlqgkewoq" path="res://Assets/Sounds/UI/UI_confirm.wav" id="3_52qkl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gr1d0"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -50,4 +52,19 @@ layout_mode = 2
 size_flags_vertical = 3
 text = "RESUME"
 
+[node name="Button2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "QUIT GAME"
+
+[node name="PauseMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_6ldad")
+volume_db = -20.0
+max_distance = 9e+06
+
+[node name="ConfirmButton" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_52qkl")
+volume_db = -20.0
+max_distance = 9e+06
+
 [connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Button2" to="." method="_on_button_2_pressed"]

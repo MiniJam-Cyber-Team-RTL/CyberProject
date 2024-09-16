@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bv1jeiiw0l217"]
+[gd_scene load_steps=5 format=3 uid="uid://bv1jeiiw0l217"]
 
 [ext_resource type="Script" path="res://Scenes/Screens/Main/main.gd" id="1_uq80c"]
-[ext_resource type="PackedScene" uid="uid://dwsi4iis5dioc" path="res://Scenes/Screens/TestMain/level_1.tscn" id="2_34xsw"]
+[ext_resource type="PackedScene" uid="uid://drqkkm5d62dbl" path="res://Scenes/Screens/levels/level_1.tscn" id="2_34xsw"]
 [ext_resource type="PackedScene" uid="uid://clxgxeb8rxway" path="res://Scenes/Components/UI/PauseMenu/pause_menu.tscn" id="3_bbvpy"]
+[ext_resource type="PackedScene" uid="uid://b3v1xlujnuow5" path="res://Scenes/Components/UI/IngameUI/InGameUI.tscn" id="4_syrje"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_uq80c")
@@ -13,5 +14,7 @@ script = ExtResource("1_uq80c")
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_bbvpy")]
 visible = false
+
+[node name="MarginContainer" parent="CanvasLayer" instance=ExtResource("4_syrje")]
 
 [connection signal="resume" from="CanvasLayer/PauseMenu" to="." method="_on_pause_menu_resume"]

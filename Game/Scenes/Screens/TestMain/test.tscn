@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://vixlbkfcedci"]
+[gd_scene load_steps=17 format=3 uid="uid://bucwye4qixad6"]
 
 [ext_resource type="Texture2D" uid="uid://cr8nhgmewvmwd" path="res://Assets/Images/Environment/Levels/industrial-zone-tileset-pixel-art/PSD/Tiles.png" id="1_fhmae"]
 [ext_resource type="Texture2D" uid="uid://cjg12wbx673e8" path="res://Assets/Images/Environment/Levels/business-center-tileset-pixel-art/4 Tilset/Tiles.png" id="2_ww0rj"]

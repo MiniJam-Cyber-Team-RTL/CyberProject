@@ -224,12 +224,12 @@ animations = [{
 radius = 20.0
 height = 48.0
 
-[node name="Cyborg" type="CharacterBody2D"]
+[node name="Cyborg" type="CharacterBody2D" groups=["enemie"]]
 script = ExtResource("1_ksxup")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8e7u2")
-animation = &"walk"
+animation = &"death"
 
 [node name="Timer" type="Timer" parent="."]
 

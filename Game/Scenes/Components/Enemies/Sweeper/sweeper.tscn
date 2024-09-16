@@ -216,7 +216,7 @@ animations = [{
 radius = 17.0
 height = 50.0
 
-[node name="Sweeper" type="CharacterBody2D"]
+[node name="Sweeper" type="CharacterBody2D" groups=["enemie"]]
 script = ExtResource("1_811k4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
