@@ -17,7 +17,7 @@ func puzzle():
 	pass
 
 func destroy():
-	print("JE suis une boxe qui meurt")
+	print("JE suis une door qui meurt")
 	$AnimatedSprite2D_Main.play("death")
 	self.translate(Vector2(900,900))
 
