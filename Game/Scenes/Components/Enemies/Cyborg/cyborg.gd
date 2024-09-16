@@ -68,7 +68,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.has_method('player'):
 		player_entered = false
-		switch_progression.emit(true)
+		if is_alive:
+			switch_progression.emit(true)
 		player = null
 
 
@@ -90,6 +91,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 			is_hurt = false
 	elif animation.animation == "death":
 		is_alive = false
+		switch_progression.emit(false)
 
 
 
