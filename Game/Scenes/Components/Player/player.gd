@@ -113,12 +113,6 @@ func change_collision(collision1 : bool, collision2: bool):
 	$CollisionShape2D_Crouch.disabled = !collision2
 
 func play_anim(anim_name : String, face_direction : bool = true, play_forward: bool = true):
-	if anim_name != 'idle':
-		pass
-		print("je play " + anim_name)
-	#$AnimatedSprite2D_Main.animation = anim_name
-	#$AnimatedSprite2D_Power.animation = anim_name + "_red"
-	#$AnimatedSprite2D_Speed.animation = anim_name + "_yellow"
 	$AnimatedSprite2D_Main.flip_h = face_direction
 	$AnimatedSprite2D_Power.flip_h = face_direction
 	$AnimatedSprite2D_Speed.flip_h = face_direction
@@ -140,7 +134,6 @@ func play_anim(anim_name : String, face_direction : bool = true, play_forward: b
 
 func take_damage(damage: int):
 	if damage > 0 and is_alive and !is_hurt:
-		print("ca fait mal")
 		player_life -= damage
 		ui.update_health(player_life)
 		is_hurt = true
@@ -173,12 +166,10 @@ func player():
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	print("je detecte", body)
 	if body.is_in_group('enemie'):
 		entered_enemie = true
 		enemy = body
 	if body.get_parent().has_method('puzzle'):
-		print("Nouveau puzzle ma geule")
 		puzzle = body
 		entered_puzzle = true
 
@@ -194,7 +185,6 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 func _on_animated_sprite_2d_main_animation_finished() -> void:
 	if $AnimatedSprite2D_Main.animation == "hurt":
 		if player_life < 1 and is_alive:
-			print("JVAIS CREVER")
 			is_alive = false
 			$AnimatedSprite2D_Main.play("death")
 			await get_tree().create_timer(0.9).timeout
@@ -203,12 +193,10 @@ func _on_animated_sprite_2d_main_animation_finished() -> void:
 			is_hurt = false
 	elif $AnimatedSprite2D_Main.animation == "death":
 		# je fais ca sous la contrainte c'est affreux j'ai honte d'écrire ça
-		print("MOOOOOOOOOOOOOOOOORT")
 		get_tree().change_scene_to_file("res://Scenes/Screens/Main/main.tscn")
 
 func _on_animated_sprite_2d_main_frame_changed() -> void:
 	if $AnimatedSprite2D_Main.animation == "punch" and $AnimatedSprite2D_Main.frame == 4 and entered_enemie:
-		print("TAPER TAOER TAPER")
 		enemy.deacrease_health(player_damage)
 	if $AnimatedSprite2D_Main.animation == "punch" and $AnimatedSprite2D_Main.frame == 4 and entered_puzzle:
 		puzzle.get_parent().destroy()
