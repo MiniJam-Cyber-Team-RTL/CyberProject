@@ -12,7 +12,6 @@ func hide_power_up(type):
 
 
 func update_health(value : int):
-	print("Fonction Called olimdjslfhjsuirhksdiolfcvkucuwilkjnbidvuojklnwchiojk")
 	$HBoxContainer/PlayerHealth/HBoxContainer/PlayerHealthLabel.text = str(value)
 
 func update_damage(value : int):

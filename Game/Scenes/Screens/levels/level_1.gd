@@ -19,5 +19,9 @@ func _on_player_update_ui() -> void:
 	var ui = get_parent().get_node("CanvasLayer/MarginContainer")
 	ui.update_damage($Player/Timer_Power.time_left)
 	ui.update_speed($Player/Timer_Speed.time_left)
-	print("PLAYER LIFE :", $Player.player_life)
 	ui.update_health($Player.player_life)
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.has_method("player"):
+		get_tree().change_scene_to_file("res://Scenes/Components/UI/Menu/end.tscn")

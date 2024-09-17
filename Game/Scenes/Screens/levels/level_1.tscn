@@ -1,7 +1,8 @@
-[gd_scene load_steps=108 format=3 uid="uid://drqkkm5d62dbl"]
+[gd_scene load_steps=113 format=3 uid="uid://drqkkm5d62dbl"]
 
 [ext_resource type="Texture2D" uid="uid://cr8nhgmewvmwd" path="res://Assets/Images/Environment/Levels/industrial-zone-tileset-pixel-art/PSD/Tiles.png" id="1_36rlo"]
 [ext_resource type="PackedScene" uid="uid://miuef0jthcb0" path="res://Scenes/Components/Decors/residential.tscn" id="1_fpcgy"]
+[ext_resource type="Script" path="res://Scenes/Screens/levels/level_1.gd" id="1_t4bbw"]
 [ext_resource type="Texture2D" uid="uid://dnqrk2kjev374" path="res://Assets/Images/Environment/Levels/green-zone-tileset-pixel-art/3 Objects/Fence/2.png" id="5_nqb26"]
 [ext_resource type="Texture2D" uid="uid://c6ugacoect1hr" path="res://Assets/Images/Environment/Levels/residential-area-tileset-pixel-art/3 Objects/Symbols/1.png" id="7_508i7"]
 [ext_resource type="PackedScene" uid="uid://cafopjuouyu2y" path="res://Scenes/Components/Decors/lamp_post.tscn" id="7_swwrx"]
@@ -92,6 +93,7 @@
 [ext_resource type="PackedScene" uid="uid://crqn14yxahnbn" path="res://Scenes/Components/Path/path.tscn" id="90_oy6hr"]
 [ext_resource type="PackedScene" uid="uid://duq4t6d8651fj" path="res://Scenes/Components/Enemies/Cyborg/cyborg.tscn" id="91_0w5yd"]
 [ext_resource type="PackedScene" uid="uid://d2m0gp8bjs68r" path="res://Scenes/Components/Enemies/Sweeper/sweeper.tscn" id="92_hwpoh"]
+[ext_resource type="PackedScene" uid="uid://7vg4uhqptwaw" path="res://Scenes/Components/Puzzle/Box/box.tscn" id="94_wksej"]
 
 [sub_resource type="Environment" id="Environment_msalp"]
 background_mode = 3
@@ -572,6 +574,12 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="Curve2D" id="Curve2D_xqf8m"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 3856, -48, 0, 0, 0, 0, 4144, -48, 0, 0, 0, 0, 3856, -48)
+}
+point_count = 3
+
 [sub_resource type="Curve2D" id="Curve2D_nrb2a"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -515, -143.985, 0, 0, 0, 0, -203, -143.985, 0, 0, 0, 0, -515, -143.985)
@@ -596,7 +604,17 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="Curve2D" id="Curve2D_nlbb6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 6683, 368, 0, 0, 0, 0, 6421, 367, 0, 0, 0, 0, 6682, 369, 0, 0, 0, 0, 6683, 368)
+}
+point_count = 4
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mau30"]
+size = Vector2(210, 1586)
+
 [node name="Level 1" type="Node2D"]
+script = ExtResource("1_t4bbw")
 metadata/_edit_horizontal_guides_ = [75.0]
 metadata/_edit_vertical_guides_ = [3548.0]
 
@@ -1871,6 +1889,15 @@ position = Vector2(6864, -144)
 [node name="Cyborg" parent="enemies/Path2D10/PathFollow2D" index="0" instance=ExtResource("91_0w5yd")]
 position = Vector2(-0.0332031, -8.09932)
 
+[node name="Path2D11" parent="enemies" instance=ExtResource("90_oy6hr")]
+curve = SubResource("Curve2D_xqf8m")
+
+[node name="PathFollow2D" parent="enemies/Path2D11" index="0"]
+position = Vector2(3856, -48)
+
+[node name="Cyborg" parent="enemies/Path2D11/PathFollow2D" index="0" instance=ExtResource("91_0w5yd")]
+position = Vector2(8, -8)
+
 [node name="Cyborg2" parent="enemies" instance=ExtResource("91_0w5yd")]
 position = Vector2(7731.17, 7.9388)
 
@@ -1920,13 +1947,36 @@ position = Vector2(5520, -48)
 [node name="Sweeper" parent="enemies/Path2D7/PathFollow2D" index="0" instance=ExtResource("92_hwpoh")]
 position = Vector2(-0.111816, -8.03716)
 
+[node name="Path2D12" parent="enemies" instance=ExtResource("90_oy6hr")]
+curve = SubResource("Curve2D_nlbb6")
+
+[node name="PathFollow2D" parent="enemies/Path2D12" index="0"]
+position = Vector2(6683, 368)
+
+[node name="Sweeper" parent="enemies/Path2D12/PathFollow2D" index="0" instance=ExtResource("92_hwpoh")]
+position = Vector2(3, -8)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(8002, -763)
+shape = SubResource("RectangleShape2D_mau30")
+
+[node name="Box" parent="." instance=ExtResource("94_wksej")]
+position = Vector2(-520, -15)
+
+[connection signal="update_ui" from="Player" to="." method="_on_player_update_ui"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+
 [editable path="enemies/Path2D"]
 [editable path="enemies/Path2D3"]
 [editable path="enemies/Path2D6"]
 [editable path="enemies/Path2D8"]
 [editable path="enemies/Path2D9"]
 [editable path="enemies/Path2D10"]
+[editable path="enemies/Path2D11"]
 [editable path="enemies/Path2D2"]
 [editable path="enemies/Path2D4"]
 [editable path="enemies/Path2D5"]
 [editable path="enemies/Path2D7"]
+[editable path="enemies/Path2D12"]

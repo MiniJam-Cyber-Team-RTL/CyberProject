@@ -101,9 +101,10 @@ func _physics_process(delta: float) -> void:
 
 		if !$"MusicPlayer".is_playing():
 			$"MusicPlayer".play()
-		update_ui.emit()
-
+		
+	
 		move_and_slide()
+	update_ui.emit()
 
 
 func change_collision(collision1 : bool, collision2: bool):

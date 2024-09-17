@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dwm0o3h8hch7n"]
+[gd_scene load_steps=17 format=3 uid="uid://dwm0o3h8hch7n"]
 
 [ext_resource type="Texture2D" uid="uid://cr8nhgmewvmwd" path="res://Assets/Images/Environment/Levels/industrial-zone-tileset-pixel-art/PSD/Tiles.png" id="1_2fofy"]
 [ext_resource type="Script" path="res://Scenes/Screens/Intro/intro.gd" id="1_76ptw"]
@@ -311,6 +311,9 @@ sources/3 = SubResource("TileSetAtlasSource_bd1o0")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4ntn"]
 size = Vector2(299.5, 461)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88f30"]
+size = Vector2(199, 345.5)
+
 [node name="Intro" type="Node2D"]
 script = ExtResource("1_76ptw")
 
@@ -359,5 +362,9 @@ shape = SubResource("RectangleShape2D_n4ntn")
 
 [node name="Door" parent="." instance=ExtResource("8_1b6g0")]
 position = Vector2(576, -105)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-203, -174.25)
+shape = SubResource("RectangleShape2D_88f30")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
