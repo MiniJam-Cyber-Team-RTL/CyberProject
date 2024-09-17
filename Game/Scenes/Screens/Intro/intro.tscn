@@ -22,8 +22,11 @@ resource_name = "Business_block"
 texture = ExtResource("3_kjt06")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 0:3/0 = 0
 0:4/0 = 0
 0:5/0 = 0
@@ -312,6 +315,7 @@ size = Vector2(299.5, 461)
 script = ExtResource("1_76ptw")
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-13, 0)
 tile_set = SubResource("TileSet_aintk")
 format = 2
 layer_0/name = "Background"
